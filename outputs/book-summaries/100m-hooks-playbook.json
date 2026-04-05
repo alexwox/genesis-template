@@ -1,0 +1,128 @@
+{
+  "bookTitle": "$100M Hooks Playbook",
+  "sourceFile": "/Users/alwo/bilbo/assets/$100M Hooks Playbook.pdf",
+  "summaryDate": "2026-03-15",
+  "completenessNote": "Reviewed the important sections on why hooks matter, the callout-plus-value model, hook types, the 70/20/10 rule, testing guidance, and the checklist. Excluded the long lists of example hooks except where they clarified reusable categories.",
+  "items": [
+    {
+      "id": "hooks-sell-attention",
+      "title": "Treat hooks as the sale of attention",
+      "type": "strategicInsight",
+      "problemsSolved": [
+        "Great offers being ignored",
+        "Content failing before the message starts"
+      ],
+      "text": "The playbook frames the hook as the mechanism that sells someone on consuming the rest of the ad, post, email, or outreach. If the opening line fails, nothing behind it can rescue performance.",
+      "usageExample": [
+        "A long educational video still fails if the first sentence does not make the target viewer stop and listen."
+      ],
+      "sourceNotes": [
+        "Opening story and early chapters: What makes hooks so important?"
+      ],
+      "relatedItems": [
+        "callout-value-condition",
+        "hook-library"
+      ]
+    },
+    {
+      "id": "callout-value-condition",
+      "title": "Build every hook with a callout and a value condition",
+      "type": "framework",
+      "problemsSolved": [
+        "Hooks that attract views but not qualified attention",
+        "Openers that sound clever but make no promise"
+      ],
+      "text": "A strong hook has two parts. The callout gets the right prospect to identify themselves, and the value condition promises what they get if they keep consuming. Together they trigger attention and justify the cost of continuing.",
+      "usageExample": [
+        "\"Chiropractors, if you want more local leads without hiring another rep, watch this.\""
+      ],
+      "sourceNotes": [
+        "How Do Hooks Work?"
+      ],
+      "relatedItems": [
+        "verbal-nonverbal-types",
+        "hooks-sell-attention"
+      ]
+    },
+    {
+      "id": "verbal-nonverbal-types",
+      "title": "Use both verbal and nonverbal hooks",
+      "type": "framework",
+      "problemsSolved": [
+        "Hooks relying only on copy when the platform rewards visuals",
+        "Creatives feeling repetitive"
+      ],
+      "text": "Hormozi splits hooks into verbal and nonverbal categories. Verbal hooks include labels, questions, conditionals, commands, statements, lists, narratives, and exclamations; nonverbal hooks use visual novelty or sound to trigger curiosity before the words even land.",
+      "usageExample": [
+        "A video opens with a dropped prop or surprising visual while the spoken hook calls out the exact avatar."
+      ],
+      "sourceNotes": [
+        "Types Of Hooks: Verbal And Nonverbal."
+      ],
+      "relatedItems": [
+        "callout-value-condition",
+        "hook-library"
+      ]
+    },
+    {
+      "id": "hook-portfolio-702010",
+      "title": "Allocate hook effort using 70/20/10",
+      "type": "framework",
+      "problemsSolved": [
+        "Teams over-experimenting and losing consistency",
+        "Teams repeating only safe ideas and never finding outliers"
+      ],
+      "text": "Seventy percent of hook effort goes to proven winners, twenty percent goes to winner-adjacent ideas, and ten percent goes to risky new experiments. This keeps current performance stable while still feeding the system with possible future breakouts.",
+      "usageExample": [
+        "A creator uses their top-performing X hooks for most shorts, tests repackaged outlier concepts from adjacent niches, and reserves a small slot for oddball visual formats."
+      ],
+      "sourceNotes": [
+        "70-20-10 model section."
+      ],
+      "relatedItems": [
+        "hook-library",
+        "data-does-the-teaching"
+      ]
+    },
+    {
+      "id": "hook-library",
+      "title": "Create a reusable hook library by platform",
+      "type": "tacticalIdea",
+      "problemsSolved": [
+        "Forgetting what already worked",
+        "Reinventing hook strategy every week"
+      ],
+      "text": "The book recommends a spreadsheet with one tab per platform and fields for hook, views or performance, and link. Every content or ad cycle starts by reviewing the best hooks instead of ideating from memory.",
+      "usageExample": [
+        "A marketer stores high-performing email subject lines, ad hooks, and YouTube openings, then repurposes them across formats."
+      ],
+      "sourceNotes": [
+        "Core Action Step under 70 percent core business."
+      ],
+      "relatedItems": [
+        "hook-portfolio-702010",
+        "data-does-the-teaching"
+      ]
+    },
+    {
+      "id": "data-does-the-teaching",
+      "title": "Let results teach you what the next hook batch should be",
+      "type": "strategicInsight",
+      "problemsSolved": [
+        "Waiting for certainty before publishing",
+        "Overvaluing opinions over evidence"
+      ],
+      "text": "If you do not have a historical dataset, publish a lot, then study the top and bottom performance bands. The top 10 percent tells you what to repeat, the bottom 10 percent tells you what to stop, and the system improves from there.",
+      "usageExample": [
+        "A new brand posts 30 pieces, discovers that direct labels and blunt commands outperform abstract openings, then doubles down on those patterns in the next batch."
+      ],
+      "sourceNotes": [
+        "Author Note: Let The Data Do The Teaching; Testing The Hooks."
+      ],
+      "relatedItems": [
+        "hook-library",
+        "hook-portfolio-702010"
+      ]
+    }
+  ]
+}

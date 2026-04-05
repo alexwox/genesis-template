@@ -1,0 +1,168 @@
+{
+  "bookTitle": "$100M Scaling Roadmap-combined",
+  "sourceFile": "/Users/alwo/bilbo/assets/$100M Scaling Roadmap-combined.pdf",
+  "summaryDate": "2026-03-15",
+  "completenessNote": "Curated summary of the stage model and progression logic. The source is very long and repetitive by stage, so the summary compresses each stage to its main operating constraint.",
+  "items": [
+    {
+      "id": "100m-scaling-roadmap-combined-001",
+      "title": "Scaling is a stage progression, not one generic problem",
+      "type": "framework",
+      "problemsSolved": [
+        "Helps operators solve the right bottleneck for their current size instead of borrowing advice from a different stage."
+      ],
+      "text": "The roadmap organizes growth into explicit stages, each with its own role, headcount, constraint, and graduation standard. Advice that works one stage later can be wasteful or harmful now.",
+      "usageExample": [
+        "A solo founder with no sales should not prioritize executive scorecards before proving that anyone will pay for the offer."
+      ],
+      "sourceNotes": [
+        "Sections: Start Here; Scaling Roadmap overview"
+      ],
+      "relatedItems": []
+    },
+    {
+      "id": "100m-scaling-roadmap-combined-002",
+      "title": "Stage 0: Improvise",
+      "type": "strategic",
+      "problemsSolved": [
+        "Helps pre-revenue operators focus on getting people to try the thing instead of pretending they already run a company."
+      ],
+      "text": "Stage 0 is about free usage, feedback, simple tools, and learning what is worth charging for. The goal is evidence of interest, not polished infrastructure.",
+      "usageExample": [
+        "A new consultant can offer early free engagements, gather feedback, and learn what clients actually value before formal pricing and systems."
+      ],
+      "sourceNotes": [
+        "Sections: Stage 0 Improvise"
+      ],
+      "relatedItems": []
+    },
+    {
+      "id": "100m-scaling-roadmap-combined-003",
+      "title": "Stage 1: Monetize",
+      "type": "strategic",
+      "problemsSolved": [
+        "Helps early operators shift from free validation to first paid demand."
+      ],
+      "text": "The main job is to make the first sale consistently, build a version-one product that is good enough to pay for, and learn to ask for money. Proof from free users becomes the first sales asset.",
+      "usageExample": [
+        "A creator with a free community can launch a simple paid cohort and use feedback plus early wins to validate willingness to pay."
+      ],
+      "sourceNotes": [
+        "Sections: Stage 1 Monetize"
+      ],
+      "relatedItems": []
+    },
+    {
+      "id": "100m-scaling-roadmap-combined-004",
+      "title": "Stage 2: Advertise",
+      "type": "strategic",
+      "problemsSolved": [
+        "Helps businesses move from founder hustle to repeatable demand creation."
+      ],
+      "text": "Once people will pay, the next step is learning how to generate demand systematically. The stage exists to make customer flow less dependent on sporadic referrals or personal outreach alone.",
+      "usageExample": [
+        "A services business that can already sell from warm leads can begin testing ads or content systems that produce opportunities on demand."
+      ],
+      "sourceNotes": [
+        "Sections: Stage 2 Advertise"
+      ],
+      "relatedItems": []
+    },
+    {
+      "id": "100m-scaling-roadmap-combined-005",
+      "title": "Stage 3: Stabilize",
+      "type": "strategic",
+      "problemsSolved": [
+        "Helps businesses stop breaking delivery and operations every time demand increases."
+      ],
+      "text": "At this point the company must make the existing motion more reliable: delivery quality, customer experience, basic systems, and economic consistency matter more than raw experimentation.",
+      "usageExample": [
+        "A fast-growing agency can pause before the next growth push to standardize onboarding, reporting, and fulfillment quality."
+      ],
+      "sourceNotes": [
+        "Sections: Stage 3 Stabilize"
+      ],
+      "relatedItems": []
+    },
+    {
+      "id": "100m-scaling-roadmap-combined-006",
+      "title": "Stage 4: Prioritize",
+      "type": "strategic",
+      "problemsSolved": [
+        "Helps leaders avoid being busy across too many initiatives when the company finally has enough activity to create real trade-offs."
+      ],
+      "text": "The roadmap implies that scaling starts to fail when everything looks important at once. Prioritization becomes the move that protects the highest-leverage work from organizational noise.",
+      "usageExample": [
+        "A founder with several channels, offers, and hires in flight can cut half the initiatives and concentrate on the one constraint most likely to unlock the next stage."
+      ],
+      "sourceNotes": [
+        "Sections: Stage 4 Prioritize"
+      ],
+      "relatedItems": []
+    },
+    {
+      "id": "100m-scaling-roadmap-combined-007",
+      "title": "Stage 5: Productize",
+      "type": "strategic",
+      "problemsSolved": [
+        "Helps owner-dependent delivery become a standardized, repeatable product."
+      ],
+      "text": "As businesses scale, custom work and founder improvisation become expensive. Productizing creates consistency, easier training, and cleaner economics.",
+      "usageExample": [
+        "A consulting business can turn one-off solutions into clearer packages, playbooks, and standardized delivery paths."
+      ],
+      "sourceNotes": [
+        "Sections: Stage 5 Productize"
+      ],
+      "relatedItems": []
+    },
+    {
+      "id": "100m-scaling-roadmap-combined-008",
+      "title": "Stage 6: Optimize",
+      "type": "strategic",
+      "problemsSolved": [
+        "Helps the company improve the efficiency of proven systems before chasing new complexity."
+      ],
+      "text": "Optimization is about tightening the machine: conversion rates, margins, staffing, retention, and cycle times. Small percentage improvements matter more once the base is larger.",
+      "usageExample": [
+        "An ecommerce company can improve checkout conversion, return rates, and repeat purchase before launching another channel."
+      ],
+      "sourceNotes": [
+        "Sections: Stage 6 Optimize"
+      ],
+      "relatedItems": []
+    },
+    {
+      "id": "100m-scaling-roadmap-combined-009",
+      "title": "Stage 7 and 8: Categorize then Specialize",
+      "type": "strategic",
+      "problemsSolved": [
+        "Helps larger companies organize talent and functions clearly enough to support specialization without chaos."
+      ],
+      "text": "These later stages imply a shift from generalist hustle to role clarity, clearer ownership, and more specialized teams. The org has to know who owns what before deeper specialization adds value.",
+      "usageExample": [
+        "A growing portfolio brand can split acquisition, retention, ops, and finance ownership cleanly before hiring more narrowly specialized leaders inside those functions."
+      ],
+      "sourceNotes": [
+        "Sections: Stage 7 Categorize; Stage 8 Specialize"
+      ],
+      "relatedItems": []
+    },
+    {
+      "id": "100m-scaling-roadmap-combined-010",
+      "title": "Stage 9: Capitalize",
+      "type": "strategic",
+      "problemsSolved": [
+        "Helps mature businesses convert operational strength into enterprise value and compounding opportunity."
+      ],
+      "text": "The final stage is about extracting the full strategic and financial upside of a well-built business. The company is no longer just surviving stage by stage; it is positioned to compound, invest, and capitalize on scale.",
+      "usageExample": [
+        "A mature company with stable systems, management depth, and strong unit economics can pursue rollups, new capital structures, or more aggressive expansion from a position of strength."
+      ],
+      "sourceNotes": [
+        "Sections: Stage 9 Capitalize"
+      ],
+      "relatedItems": []
+    }
+  ]
+}

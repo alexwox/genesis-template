@@ -1,0 +1,25 @@
+.next/
+/out/
+.vercel/
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+.env*
+*.local
+.DS_Store
+*.swp
+
+# Optional: ignore build output (uncomment if needed)
+# .turbo/
+# build/
+
+# Optional: ignore logs
+logs/
+*.log
+
+# Optional: OS files
+Thumbs.db
+
+tsconfig.tsbuildinfo

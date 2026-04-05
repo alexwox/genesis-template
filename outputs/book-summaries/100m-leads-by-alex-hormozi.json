@@ -1,0 +1,192 @@
+{
+  "bookTitle": "$100M Leads",
+  "sourceFile": "/Users/alwo/bilbo/assets/$100M-Leads-by-Alex-Hormozi.pdf",
+  "summaryDate": "2026-03-15",
+  "completenessNote": "Reviewed the important sections on lead magnets, the Core Four channels, paid ads economics, referrals, employees, agencies, and affiliates. Excluded memoir sections, generic encouragement, and repetitive illustrations unless they clarified a reusable mechanism.",
+  "items": [
+    {
+      "id": "core-four-model",
+      "title": "Reduce lead generation to the Core Four",
+      "type": "framework",
+      "problemsSolved": [
+        "Feeling overwhelmed by too many acquisition options",
+        "Not knowing where a lead problem actually sits"
+      ],
+      "text": "Hormozi collapses lead generation into four moves: warm outreach, posting free content, cold outreach, and paid ads. The operating insight is that if leads are low, the business usually needs more skill or more volume in one of these four rather than a brand-new channel.",
+      "usageExample": [
+        "A local service business with weak deal flow first works its contact list, posts proof-based content, then adds cold outreach before risking money on paid ads."
+      ],
+      "sourceNotes": [
+        "Section III: The Core Four Advertising Methods."
+      ],
+      "relatedItems": [
+        "lead-magnet-design",
+        "warm-outreach-first-five",
+        "paid-ads-economics"
+      ]
+    },
+    {
+      "id": "lead-magnet-design",
+      "title": "Design lead magnets that solve one narrow problem and reveal the next paid problem",
+      "type": "framework",
+      "problemsSolved": [
+        "Cold traffic not ready to buy the core offer",
+        "Free offers generating low-intent leads"
+      ],
+      "text": "A strong lead magnet is a complete solution to a narrow problem that naturally exposes the bigger problem solved by the paid offer. The book highlights three lead magnet types: reveal the problem, sample/trial, and one step of a multi-step process. Each can be delivered through software, information, services, or physical products.",
+      "usageExample": [
+        "A realtor offers a free home-value assessment that naturally leads into pricing, staging, and sale execution.",
+        "A SaaS company offers a website speed audit that reveals revenue lost to slow load times and tees up the paid implementation."
+      ],
+      "sourceNotes": [
+        "Section II: Engage Your Leads - problem-solution cycle, three lead magnet types, four delivery modes."
+      ],
+      "relatedItems": [
+        "cta-reasons-why",
+        "paid-ads-economics",
+        "give-until-they-ask"
+      ]
+    },
+    {
+      "id": "cta-reasons-why",
+      "title": "Use direct CTAs plus reasons to act now",
+      "type": "tacticalIdea",
+      "problemsSolved": [
+        "Prospects liking the offer but not taking the next step",
+        "Lead magnets getting attention without conversion"
+      ],
+      "text": "Good CTAs say exactly what to do and layer in reasons to act now. The book emphasizes clarity over cleverness and recommends stacking ethical scarcity, urgency, and a simple reason why the action should happen immediately.",
+      "usageExample": [
+        "A gym lead magnet ad says: \"Book now. We only onboard five challenge clients each week, and the best class slots go first.\""
+      ],
+      "sourceNotes": [
+        "Section II Step 7: Make it easy for them to tell you they want more."
+      ],
+      "relatedItems": [
+        "lead-magnet-design",
+        "warm-outreach-first-five"
+      ]
+    },
+    {
+      "id": "warm-outreach-first-five",
+      "title": "Use warm outreach to get the first five customers and the first proof",
+      "type": "tacticalIdea",
+      "problemsSolved": [
+        "Launching with no audience and no testimonials",
+        "Needing early customers without ad spend"
+      ],
+      "text": "Warm outreach starts with the contacts and followers you already have. Hormozi recommends reaching out to 100 people per day, opening with a personal note, using the ACA conversation structure, offering a very easy yes, and making the first five deals free or heavily discounted so the business gains reps, reviews, and referrals.",
+      "usageExample": [
+        "A new nutrition coach texts personal contacts, offers five free beta spots in exchange for feedback and a review, then raises prices every five customers once referrals begin."
+      ],
+      "sourceNotes": [
+        "Warm Outreach chapter - 10 steps, ACA framework, benchmarks."
+      ],
+      "relatedItems": [
+        "core-four-model",
+        "referral-goodwill-engine"
+      ]
+    },
+    {
+      "id": "give-until-they-ask",
+      "title": "Over-give in public and let demand surface in private",
+      "type": "strategicInsight",
+      "problemsSolved": [
+        "Audience growth slowing because monetization starts too early",
+        "Content creating weak trust"
+      ],
+      "text": "The book pushes beyond a normal give-ask ratio and argues that the best content strategy is to give until the audience starts asking how to buy. This preserves trust, grows the audience faster, and tends to attract better buyers than constant public asking.",
+      "usageExample": [
+        "A consultant posts free breakdowns, checklists, and case studies until prospects start DMing for implementation help, instead of attaching a hard pitch to every post."
+      ],
+      "sourceNotes": [
+        "Post Free Content chapter - goodwill, give-ask ratio, give until they ask."
+      ],
+      "relatedItems": [
+        "lead-magnet-design",
+        "content-compounding-asset"
+      ]
+    },
+    {
+      "id": "content-compounding-asset",
+      "title": "The audience compounds even when the content does not",
+      "type": "strategicInsight",
+      "problemsSolved": [
+        "Treating content as disposable instead of strategic",
+        "Paid ads underperforming because trust is too low"
+      ],
+      "text": "Hormozi reframes content as an audience-building asset rather than a post-by-post activity. Content may decay, but the audience remains, warms future prospects, supports launches, helps sales, and boosts the performance of other acquisition channels.",
+      "usageExample": [
+        "A founder posts niche-specific videos for months, then finds that paid ad leads convert better because many already consumed two or more long-form pieces before booking."
+      ],
+      "sourceNotes": [
+        "Post Free Content chapter - personal brand shift, 78 percent consumed prior content, lessons from content."
+      ],
+      "relatedItems": [
+        "give-until-they-ask",
+        "core-four-model"
+      ]
+    },
+    {
+      "id": "cold-outreach-big-fast-value",
+      "title": "Cold outreach wins when the prospect gets big fast value",
+      "type": "tacticalIdea",
+      "problemsSolved": [
+        "Cold outreach getting ignored",
+        "Lead magnets sounding like disguised sales calls"
+      ],
+      "text": "Strangers do not grant much attention, so cold outreach has to demonstrate real value very quickly. Hormozi found that replacing vague offers like a game-planning call with tangible free work tripled take rates. The heuristic is simple: give away something people normally pay for.",
+      "usageExample": [
+        "Instead of offering a vague strategy call, an agency sends a prospect a free landing-page teardown with three specific fixes and an estimated revenue impact."
+      ],
+      "sourceNotes": [
+        "Cold Outreach chapter - big fast value, automation, follow-up."
+      ],
+      "relatedItems": [
+        "lead-magnet-design",
+        "paid-ads-economics"
+      ]
+    },
+    {
+      "id": "paid-ads-economics",
+      "title": "Scale paid ads with LTGP:CAC and client-financed acquisition",
+      "type": "framework",
+      "problemsSolved": [
+        "Ads that look expensive on first purchase economics",
+        "Growth capped by cash flow rather than demand"
+      ],
+      "text": "Paid ads should be judged by lifetime gross profit to CAC, not by vanity front-end metrics alone. Hormozi recommends three phases: track money, lose money while testing, then print money once a winner exists. The major unlock is client-financed acquisition: recovering acquisition and fulfillment costs within the first 30 days so cash can be recycled into more spend.",
+      "usageExample": [
+        "A membership business sells a $100 upsell that 1 in 5 buyers takes, moving 30-day gross profit from $10 to $30 and fully covering a $30 CAC."
+      ],
+      "sourceNotes": [
+        "Run Paid Ads Part II: three phases, LTGP:CAC, client-financed acquisition."
+      ],
+      "relatedItems": [
+        "core-four-model",
+        "lead-magnet-design",
+        "referral-goodwill-engine"
+      ]
+    },
+    {
+      "id": "referral-goodwill-engine",
+      "title": "Goodwill is the real referral engine",
+      "type": "framework",
+      "problemsSolved": [
+        "Customers not referring despite being satisfied",
+        "Referral programs underperforming because the product is only okay"
+      ],
+      "text": "Referrals compound when the product creates enough surplus value that customers feel safe risking their own reputation on it. The six levers are better customer fit, better expectation setting, better results, faster wins, lower effort and sacrifice, and a compelling next offer. Referral incentives then work because they sit on top of real goodwill rather than trying to substitute for it.",
+      "usageExample": [
+        "A coaching business asks every new buyer who they should do the program with, offers both people a referral credit, and backs it with faster onboarding wins and stronger guarantees tied to the behaviors that drive results."
+      ],
+      "sourceNotes": [
+        "Customer Referrals chapter - referrals vs churn, six value levers, seven referral asks."
+      ],
+      "relatedItems": [
+        "warm-outreach-first-five",
+        "paid-ads-economics"
+      ]
+    }
+  ]
+}

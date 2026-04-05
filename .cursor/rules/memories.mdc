@@ -1,0 +1,56 @@
+---
+alwaysApply: true
+---
+
+# Memory Management
+
+## What memories are
+
+Memories are persistent facts, preferences, decisions, and context about the user and their projects that the agent retains across conversations. They live in the `.cursor/memories/` folder as topic-based Markdown files.
+
+## How to use memories
+
+At the start of every conversation, consult the **Memory file index** below to see what memory files exist. When a file is relevant to the current task, read it before responding. Do not read every file every time — only those that are pertinent.
+
+## How to update memories
+
+### Adding or updating a memory
+
+1. When the user shares a fact worth remembering (personal info, preference, project context, decision), write it to the appropriate `.cursor/memories/[topic].md` file.
+2. If no suitable topic file exists, create one with a clear, lowercase-kebab-case filename (e.g. `.cursor/memories/tool-preferences.md`).
+3. After writing the memory, append a timestamped entry to `.cursor/memories/log.md` in the format shown in that file.
+4. Update the **Memory file index** below to reflect any new or changed files.
+
+### Removing or correcting a memory
+
+1. Edit the relevant `.cursor/memories/[topic].md` file — replace or delete the outdated entry.
+2. Append a removal/correction entry to `.cursor/memories/log.md`.
+3. If an entire topic file is deleted, remove its row from the index below.
+
+### When to store a memory
+
+Store when the user:
+
+- Shares personal information (name, role, location, etc.)
+- States a preference or convention they want followed
+- Makes a project decision that future conversations should respect
+- Corrects the agent on something that should not be repeated
+
+Do NOT proactively ask the user if they'd like to store a memory — just do it when it's clearly warranted, and mention that you've noted it.
+
+## Guidelines
+
+- Keep memories atomic: one fact or preference per bullet point.
+- Never store secrets, passwords, API keys, or credentials.
+- Prefer updating an existing entry over creating a duplicate.
+- Periodically prune stale or superseded information.
+- When in doubt about whether something is worth remembering, lean toward storing it — it's easy to remove later.
+
+## Memory file index
+
+| File                                        | Summary                                                                                                                    |
+| ------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------- |
+| `.cursor/memories/log.md`                   | Append-only changelog of all memory additions, updates, and removals.                                                      |
+| `.cursor/memories/user-info.md`             | Personal information about the user (name, DOB, location, education, current role, public profiles, interests).            |
+| `.cursor/memories/work-history.md`          | Career history from BlockSettle through Strawberry Browser to Woxst AB (current); speaking engagements.                    |
+| `.cursor/memories/products-and-projects.md` | Catalog of products and projects built (Strawberry, Cantor, ScrapeFlow, Pictoria-AI, Borsdata client, AI matching engine). |

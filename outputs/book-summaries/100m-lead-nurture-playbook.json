@@ -1,0 +1,88 @@
+{
+  "bookTitle": "$100M Lead Nurture Playbook",
+  "sourceFile": "/Users/alwo/bilbo/assets/$100M Lead Nurture Playbook.pdf",
+  "summaryDate": "2026-03-15",
+  "completenessNote": "Curated summary of the four-pillar show-rate framework and execution checklist. Boilerplate legal content was excluded.",
+  "items": [
+    {
+      "id": "100m-lead-nurture-playbook-001",
+      "title": "If they do not show, they cannot buy",
+      "type": "strategic",
+      "problemsSolved": [
+        "Helps businesses treat appointment attendance as a core revenue problem rather than a minor operational annoyance."
+      ],
+      "text": "The playbook reframes nurture as a show-rate system. If scheduled leads do not respond, schedule, or attend, the sales team never gets a real chance to close.",
+      "usageExample": [
+        "An agency with plenty of booked calls but weak revenue could focus first on reminders, response rules, and appointment-confirmation workflows before rewriting the sales script."
+      ],
+      "sourceNotes": [
+        "Sections: Lead Nurture"
+      ],
+      "relatedItems": []
+    },
+    {
+      "id": "100m-lead-nurture-playbook-002",
+      "title": "The four pillars of lead nurture",
+      "type": "framework",
+      "problemsSolved": [
+        "Helps teams diagnose where nurture is failing instead of treating follow-up as one generic activity."
+      ],
+      "text": "The book organizes better lead nurture around availability, speed, personalization, and volume. The pillars work together: being reachable, replying fast, sounding human, and following up enough times to matter.",
+      "usageExample": [
+        "A home-services company can audit whether it is losing deals because the rep only replies during office hours, takes too long, sends generic reminders, or gives up after two messages."
+      ],
+      "sourceNotes": [
+        "Sections: Four Pillars of Lead Nurture; Pillar I Availability; Pillar II Speed; Pillar III Personalization; Pillar IV Volume"
+      ],
+      "relatedItems": []
+    },
+    {
+      "id": "100m-lead-nurture-playbook-003",
+      "title": "Use data to find the real drivers of show rate",
+      "type": "strategic",
+      "problemsSolved": [
+        "Helps teams improve attendance based on observed behavior rather than intuition."
+      ],
+      "text": "The origin story of the playbook comes from mining a huge appointment dataset to identify the variables most correlated with people actually showing. The principle is to let real behavior shape the follow-up system.",
+      "usageExample": [
+        "A business that handles thousands of booked calls can compare show rates by reply time, reminder cadence, confirmation format, and appointment type to isolate the biggest levers."
+      ],
+      "sourceNotes": [
+        "Sections: Lead Nurture origin story"
+      ],
+      "relatedItems": []
+    },
+    {
+      "id": "100m-lead-nurture-playbook-004",
+      "title": "Speed compounds across the whole follow-up chain",
+      "type": "tactical",
+      "problemsSolved": [
+        "Helps businesses capture intent before it decays and before competitors respond."
+      ],
+      "text": "Fast response is not just about the first reply; it also applies to confirmations, reschedules, reminder replies, and day-of issue handling. Delay lowers momentum and increases drop-off.",
+      "usageExample": [
+        "A med spa could route new leads to a rep within a minute, confirm the appointment quickly, and text back immediately when the prospect asks to move the slot rather than waiting until the next day."
+      ],
+      "sourceNotes": [
+        "Sections: Pillar II Speed; Execution"
+      ],
+      "relatedItems": []
+    },
+    {
+      "id": "100m-lead-nurture-playbook-005",
+      "title": "Personalized, repeated touches beat generic automation alone",
+      "type": "tactical",
+      "problemsSolved": [
+        "Helps teams improve show rates by making follow-up feel relevant enough to answer instead of easy to ignore."
+      ],
+      "text": "The playbook does not reject automation; it argues that automation works best when combined with personalization and enough total touches. Personalized reminders and human replies keep the lead moving.",
+      "usageExample": [
+        "A B2B agency can send an automated reminder sequence but still have the setter reference the prospect's stated goal, timing, or pain point in manual follow-ups to increase response and attendance."
+      ],
+      "sourceNotes": [
+        "Sections: Pillar III Personalization; Pillar IV Volume; Lead Nurture Checklist"
+      ],
+      "relatedItems": []
+    }
+  ]
+}

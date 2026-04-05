@@ -1,0 +1,145 @@
+{
+  "bookTitle": "ACQ Advertising Handbook",
+  "sourceFile": "/Users/alwo/bilbo/assets/ACQ Ads Handbook.pdf",
+  "summaryDate": "2026-03-15",
+  "completenessNote": "This PDF was image-heavy and required OCR-assisted review. I reviewed the title, table of contents, the Ad Kaleidoscope section, and representative framework pages across Gym Launch, ALAN, Skool, and the $100M Leads launch sections. Visual-only nuances may exist beyond the OCR-readable text, but the main systems and named frameworks were covered.",
+  "items": [
+    {
+      "id": "dont-kill-winners-early",
+      "title": "Do not stop running winning ads because the team is bored",
+      "type": "strategicInsight",
+      "problemsSolved": [
+        "Teams replacing profitable ads too early",
+        "Creative churn caused by internal boredom rather than market fatigue"
+      ],
+      "text": "The handbook opens with the Henry Ford lesson: the public has seen your ad far fewer times than you have. Winning ads should stay live until performance drops, not until the internal team wants novelty.",
+      "usageExample": [
+        "A founder keeps a top-performing lead ad active and spins variations off it rather than replacing it after one month because the team is tired of seeing it."
+      ],
+      "sourceNotes": [
+        "Why People Struggle To Advertise And How To Fix It; Ad Kaleidoscope introduction."
+      ],
+      "relatedItems": [
+        "ad-kaleidoscope",
+        "remix-vs-remake"
+      ]
+    },
+    {
+      "id": "ad-kaleidoscope",
+      "title": "Use the Ad Kaleidoscope to multiply winners",
+      "type": "framework",
+      "problemsSolved": [
+        "Making too many brand-new ads from scratch",
+        "Not getting enough volume from proven creative"
+      ],
+      "text": "The Ad Kaleidoscope applies Pareto logic to ad production: identify winners, remix them in post, remake them in production, and reserve a smaller share of effort for truly new ideas. The aim is to get more, better, and new ads from the same winning core.",
+      "usageExample": [
+        "A brand takes its top three hooks from last month and generates dozens of platform-native versions before scripting fresh concepts."
+      ],
+      "sourceNotes": [
+        "Part I: Ad Kaleidoscope - What it is and How to use it."
+      ],
+      "relatedItems": [
+        "dont-kill-winners-early",
+        "remix-vs-remake"
+      ]
+    },
+    {
+      "id": "remix-vs-remake",
+      "title": "Remix winners first, then remake them in the real world",
+      "type": "framework",
+      "problemsSolved": [
+        "Slow creative refresh cycles",
+        "Winner fatigue with no systematic extension path"
+      ],
+      "text": "Remixes use the same footage with new speeds, filters, backgrounds, fonts, headlines, formats, or effects; remakes keep the winning script but change props, examples, settings, talent, or combinations of those. Remixes are faster and shorter-lived, remakes take longer but extend winners for months or years.",
+      "usageExample": [
+        "An ad keeps the same winning script but moves from founder-in-office to customer-in-store, then later swaps the prop and headline again."
+      ],
+      "sourceNotes": [
+        "Part I: Remixing Winners and Remaking Winners."
+      ],
+      "relatedItems": [
+        "ad-kaleidoscope"
+      ]
+    },
+    {
+      "id": "origin-story-antiproof",
+      "title": "Use origin stories that stack anti-proof before the payoff",
+      "type": "framework",
+      "problemsSolved": [
+        "Prospects assuming results only work in perfect conditions",
+        "Skepticism toward big claims"
+      ],
+      "text": "The Personal Testimonial or Origin Story framework works by making a large promise and then showing all the ways the situation looked wrong for that outcome. The eventual proof resolves the open loop and neutralizes the viewer's default objections.",
+      "usageExample": [
+        "A local business ad shows a terrible location, a weak starting point, and other unfavorable conditions before revealing the impressive result."
+      ],
+      "sourceNotes": [
+        "Section I: Ad Framework #1 Personal Testimonial or Origin Story."
+      ],
+      "relatedItems": [
+        "specific-avatar-application"
+      ]
+    },
+    {
+      "id": "specific-avatar-application",
+      "title": "Call out a narrow avatar, current metric, and target state",
+      "type": "framework",
+      "problemsSolved": [
+        "Generic ads attracting low-fit leads",
+        "Complex offers needing stronger qualification"
+      ],
+      "text": "Several framework pages show the same pattern: name the avatar, describe the current performance level, contrast it with a much larger outcome, introduce the mechanism, and gate the next step through an application or qualification sequence. This improves fit and perceived seriousness.",
+      "usageExample": [
+        "If you are a local lead gen agency doing $15k a month and trying to get to $100k plus, I have something special for you."
+      ],
+      "sourceNotes": [
+        "Section II: Looking For 5 Agency Owners; North Star application guidance."
+      ],
+      "relatedItems": [
+        "long-term-results-quality",
+        "origin-story-antiproof"
+      ]
+    },
+    {
+      "id": "long-term-results-quality",
+      "title": "Use long-term result ads to attract higher-value buyers",
+      "type": "strategicInsight",
+      "problemsSolved": [
+        "Cheap leads with poor retention",
+        "Ads attracting beginners when the business wants advanced buyers"
+      ],
+      "text": "The long-term result framework emphasizes durable outcomes over flashy quick wins. Hormozi positions this as a way to attract more advanced customers who cost more to acquire but pay more, stay longer, and refer more, which means the right optimization is LTV to CAC, not just cheap CAC.",
+      "usageExample": [
+        "An agency advertises improved client lifespan and multi-quarter growth rather than a quick spike, pulling in more serious operators."
+      ],
+      "sourceNotes": [
+        "Section I: Long Term Result framework."
+      ],
+      "relatedItems": [
+        "specific-avatar-application"
+      ]
+    },
+    {
+      "id": "bribe-prize-framework",
+      "title": "Use an insane bribe or contest with a clear winning path",
+      "type": "framework",
+      "problemsSolved": [
+        "Offers not strong enough to interrupt attention",
+        "Contest ads feeling fake or confusing"
+      ],
+      "text": "The Skool and book launch examples show the same structure: display a prize visually, put it on a short time constraint, show that real people can win, define a simple path to winning, provide support tools, and make the non-winning outcome valuable too. This turns a giveaway from fluff into an action machine.",
+      "usageExample": [
+        "A software company gives away a high-value prize for the community with the most qualified referrals in 30 days, while every participant still gets training and templates."
+      ],
+      "sourceNotes": [
+        "Section III challenge-with-prize guidance; book launch bribe pages."
+      ],
+      "relatedItems": [
+        "ad-kaleidoscope",
+        "specific-avatar-application"
+      ]
+    }
+  ]
+}

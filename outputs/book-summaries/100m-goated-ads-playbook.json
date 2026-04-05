@@ -1,0 +1,148 @@
+{
+  "bookTitle": "$100M Goated Ads Playbook",
+  "sourceFile": "/Users/alwo/bilbo/assets/$100M Goated Ads Playbook.pdf",
+  "summaryDate": "2026-03-15",
+  "completenessNote": "Reviewed the important sections on why ads hit a wall, the ad assembly process, hook sourcing and awareness matching, the five ad body formats, CTA construction, and the final cheat sheet. Excluded legal matter and repetitive screenshot references.",
+  "items": [
+    {
+      "id": "creative-ceiling-not-market-ceiling",
+      "title": "Treat scaling walls as creative ceilings first",
+      "type": "strategicInsight",
+      "problemsSolved": [
+        "Blaming market saturation too early",
+        "Rising CAC after initial scaling"
+      ],
+      "text": "The playbook argues that many ad accounts do not exhaust the market; they exhaust the quality and freshness of their creative. Better ads convert colder traffic, so the path to bigger scale is usually better creative volume before bigger budget changes.",
+      "usageExample": [
+        "A weight-loss brand stuck at $8k per day ad spend refreshes creative aggressively rather than assuming Facebook is tapped out."
+      ],
+      "sourceNotes": [
+        "Opening story and Why Ads Hit A Wall section."
+      ],
+      "relatedItems": [
+        "ad-assembly-line",
+        "awareness-hook-ladder"
+      ]
+    },
+    {
+      "id": "ad-assembly-line",
+      "title": "Build ads through an assembly line of hooks, meats, and CTAs",
+      "type": "framework",
+      "problemsSolved": [
+        "Creative production bottlenecks",
+        "Too few ad tests per recording session"
+      ],
+      "text": "Instead of scripting whole ads individually, the system chunks production into 50 hooks, 3 to 5 bodies, and 1 to 3 CTAs. The combinations create 150 to 750 ads from one prep cycle, which massively expands test volume without requiring 150 separate scripts.",
+      "usageExample": [
+        "A SaaS team records one set of testimonial bodies, then pairs them with hooks for founder-aware, solution-aware, and problem-aware audiences."
+      ],
+      "sourceNotes": [
+        "The Ad Assembly Process."
+      ],
+      "relatedItems": [
+        "hook-research-loop",
+        "cta-show-next-step"
+      ]
+    },
+    {
+      "id": "awareness-hook-ladder",
+      "title": "Map hooks to audience awareness level",
+      "type": "framework",
+      "problemsSolved": [
+        "Cold traffic ignoring offer-led ads",
+        "Hooks overfitting to warm audiences"
+      ],
+      "text": "The playbook uses five awareness levels: most aware, product aware, solution aware, problem aware, and completely unaware. The colder the audience, the more the hook should rely on proof, promise, pain, or curiosity rather than a direct offer.",
+      "usageExample": [
+        "A known supplement brand can lead with a discount, while a new health startup may need a pain or curiosity hook about the hidden cause of weight gain."
+      ],
+      "sourceNotes": [
+        "Why Ads Hit A Wall And How To Scale Past It; awareness examples."
+      ],
+      "relatedItems": [
+        "creative-ceiling-not-market-ceiling",
+        "hook-research-loop"
+      ]
+    },
+    {
+      "id": "hook-research-loop",
+      "title": "Write hooks from winners before inventing from scratch",
+      "type": "tacticalIdea",
+      "problemsSolved": [
+        "Hook writing feeling random",
+        "Teams making too many unproven creative bets"
+      ],
+      "text": "Most hook writing should come from previous winners: your own ads, your own content, other people's ads, other people's content, and platform ad libraries. This shifts the process from guesswork to modeled probability and keeps the majority of output near proven patterns.",
+      "usageExample": [
+        "A coach lifts the opening line from a high-performing YouTube short and reuses it as the hook for a paid lead magnet ad."
+      ],
+      "sourceNotes": [
+        "Next Time You Film; winning hook sources and expansion hooks."
+      ],
+      "relatedItems": [
+        "ad-assembly-line",
+        "awareness-hook-ladder"
+      ]
+    },
+    {
+      "id": "five-meat-formats",
+      "title": "Use five repeatable ad body formats",
+      "type": "framework",
+      "problemsSolved": [
+        "Not knowing how to structure the ad after the hook",
+        "Creative teams defaulting to one monotonous ad type"
+      ],
+      "text": "Hormozi reduces the body of the ad to five formats: demonstration, testimonial, education, story, and faceless. These formats work across products, services, SaaS, and local businesses, and they mix well with different hook types.",
+      "usageExample": [
+        "A local business can test the same hook with a testimonial version, a before-and-after demonstration, and a text-message screenshot montage."
+      ],
+      "sourceNotes": [
+        "The Ad Meat section."
+      ],
+      "relatedItems": [
+        "ad-assembly-line",
+        "cta-show-next-step"
+      ]
+    },
+    {
+      "id": "cta-show-next-step",
+      "title": "Tell people what to do and show what happens next",
+      "type": "tacticalIdea",
+      "problemsSolved": [
+        "Interest without conversion",
+        "Drop-off after people click"
+      ],
+      "text": "A sound CTA says what to do, how to do it, when to do it, what they get, and optionally what happens next. Demonstrating the next screen or the next click increases congruence between ad and landing experience and improves follow-through.",
+      "usageExample": [
+        "A free trial ad shows the exact signup screen and the first screen inside the app so the viewer knows what the click will produce."
+      ],
+      "sourceNotes": [
+        "CTA - Call To Action section and cheat sheet."
+      ],
+      "relatedItems": [
+        "ad-assembly-line",
+        "five-meat-formats"
+      ]
+    },
+    {
+      "id": "repeat-winners-dont-chase-novelty",
+      "title": "Repeat what works because it is still new to new viewers",
+      "type": "strategicInsight",
+      "problemsSolved": [
+        "Teams abandoning winners from boredom",
+        "Unnecessary creative reinvention"
+      ],
+      "text": "New customers enter the market every day, so proven messaging often remains fresh to them long after the team is tired of it. The job is not to entertain the internal team; it is to keep serving the highest-converting message to the next eligible buyer.",
+      "usageExample": [
+        "A founder keeps a winning testimonial angle active for months, only changing hooks and body combinations instead of replacing the whole campaign out of boredom."
+      ],
+      "sourceNotes": [
+        "Scale It section and final cheat sheet."
+      ],
+      "relatedItems": [
+        "creative-ceiling-not-market-ceiling",
+        "ad-assembly-line"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,148 @@
+{
+  "bookTitle": "$100M Marketing Machine",
+  "sourceFile": "/Users/alwo/bilbo/assets/$100M Marketing Machine.pdf",
+  "summaryDate": "2026-03-15",
+  "completenessNote": "Reviewed the important sections on why the machine matters, lifecycle ads, social and community scraping, event capture, bonus and award systems, competitions, implementation order, and the final checklist. Excluded decorative pages and screenshot-only examples.",
+  "items": [
+    {
+      "id": "founder-risk-reduction",
+      "title": "Build a proof machine so the business stops depending on the founder",
+      "type": "strategicInsight",
+      "problemsSolved": [
+        "Founder being the face of every ad",
+        "Business value dropping because acquisition depends on one person"
+      ],
+      "text": "The strategic purpose of the marketing machine is to replace founder-dependent creative with customer-generated proof. That makes the business less risky, more sellable, and often better-performing because prospects respond more strongly to real customer stories than to founder self-promotion.",
+      "usageExample": [
+        "A service business replaces founder-heavy ads with customer clips, reviews, and milestone moments, making the company easier to sell and easier to scale."
+      ],
+      "sourceNotes": [
+        "Opening story, Why This Matters, How The Marketing Machine Works."
+      ],
+      "relatedItems": [
+        "lifecycle-ads",
+        "proof-as-inventory"
+      ]
+    },
+    {
+      "id": "lifecycle-ads",
+      "title": "Turn the customer journey into lifecycle ads",
+      "type": "framework",
+      "problemsSolved": [
+        "Testimonials feeling generic",
+        "Ads failing to show transformation over time"
+      ],
+      "text": "Lifecycle ads stitch together before, during, and after moments from real customer interactions. The system records calls, stores them, and clips the prospect's original pain, a support milestone, and the eventual win into one arc that sells transformation with timestamps instead of memory.",
+      "usageExample": [
+        "A coaching business cuts a sales-call pain clip, a mid-program implementation clip, and a milestone call win into one ad showing the full journey."
+      ],
+      "sourceNotes": [
+        "Lifecycle Ads section and checklist."
+      ],
+      "relatedItems": [
+        "event-testimonial-script",
+        "proof-as-inventory"
+      ]
+    },
+    {
+      "id": "social-and-proof-scrape",
+      "title": "Scrape proof from tags, chats, communities, and reviews",
+      "type": "tacticalIdea",
+      "problemsSolved": [
+        "Marketing team always short on credible creative",
+        "Ignoring proof already created by customers"
+      ],
+      "text": "The machine treats social tags, support messages, community wins, and review sites as proof sources. Teams should define key search terms, set recurring scrape reminders, save the best screenshots and recordings, and separate standout assets from mediocre ones so the best proof is ready for ads.",
+      "usageExample": [
+        "A SaaS company searches support chats for words like closed, dollar signs, and revenue, screenshots the strongest customer wins, and turns them into faceless ads."
+      ],
+      "sourceNotes": [
+        "Social Media Scrape; Communication and Communities Scrape; Reviews Scrape."
+      ],
+      "relatedItems": [
+        "proof-as-inventory",
+        "bonus-award-loops"
+      ]
+    },
+    {
+      "id": "event-testimonial-script",
+      "title": "Use events to mass-capture proof with a six-point script",
+      "type": "framework",
+      "problemsSolved": [
+        "Events producing memories but not reusable marketing assets",
+        "Testimonials lacking a convincing arc"
+      ],
+      "text": "Events should capture stage footage, polished sit-down testimonials, and quick man-on-the-street clips. The six-point testimonial script is: internal struggle, external struggle, skepticism, what overcame it, external victory, and internal victory. That sequence turns event media into high-conviction proof assets.",
+      "usageExample": [
+        "At a customer conference, a team pre-books high-value customers, runs them through the six-point script in a side room, and also records rapid-fire metric answers during breaks."
+      ],
+      "sourceNotes": [
+        "In-Person Events section."
+      ],
+      "relatedItems": [
+        "lifecycle-ads",
+        "bonus-award-loops"
+      ]
+    },
+    {
+      "id": "bonus-award-loops",
+      "title": "Use bonuses, awards, and competitions to manufacture proof loops",
+      "type": "framework",
+      "problemsSolved": [
+        "Customers liking the product but not voluntarily making content",
+        "Needing more proof without buying UGC at retail rates"
+      ],
+      "text": "The playbook recommends making desirable bonuses or awards and requiring testimonial assets to unlock them. That can produce post screenshots, testimonial videos, unboxings, stage presentations, and competition submissions from one incentive structure.",
+      "usageExample": [
+        "A business offers a premium bonus training for customers who submit a short result video and a community post with proof screenshots."
+      ],
+      "sourceNotes": [
+        "Bonuses and Award Ads; Competitions."
+      ],
+      "relatedItems": [
+        "social-and-proof-scrape",
+        "implementation-order"
+      ]
+    },
+    {
+      "id": "proof-as-inventory",
+      "title": "Treat proof like inventory that must be collected weekly",
+      "type": "strategicInsight",
+      "problemsSolved": [
+        "Marketing depending on sporadic testimonial drives",
+        "Creative drying up between launches"
+      ],
+      "text": "The machine only works when proof collection is operationalized. Weekly checklists should gather names of customer wins, saved social posts, scraped messages, reviews, bonus unlocks, award deliveries, and reaction videos so marketing can pull from a stocked proof library instead of starting from zero.",
+      "usageExample": [
+        "A marketing manager begins each week by checking dedicated folders for new win screenshots, tagged media, review captures, and raw customer videos."
+      ],
+      "sourceNotes": [
+        "Putting It All Together; Implementation Checklist."
+      ],
+      "relatedItems": [
+        "social-and-proof-scrape",
+        "lifecycle-ads"
+      ]
+    },
+    {
+      "id": "implementation-order",
+      "title": "Start with the easiest proof loops before the heaviest ones",
+      "type": "tacticalIdea",
+      "problemsSolved": [
+        "Teams getting overwhelmed by the full machine",
+        "Trying to build every proof system at once"
+      ],
+      "text": "Hormozi explicitly orders the machine for early implementation: competition, chat scrape, community scrape, reviews scrape, social media scrape, bonus unlocks, award unlocks, events, then lifecycle ads. The logic is to start with assets the business likely already has before investing in higher-labor capture systems.",
+      "usageExample": [
+        "A small agency first mines reviews and customer Slack messages for proof, then later adds formal event and lifecycle capture once the team grows."
+      ],
+      "sourceNotes": [
+        "Final Thoughts and implementation order."
+      ],
+      "relatedItems": [
+        "proof-as-inventory",
+        "bonus-award-loops"
+      ]
+    }
+  ]
+}

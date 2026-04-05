@@ -1,0 +1,184 @@
+{
+  "bookTitle": "$100M Sales Playbook",
+  "sourceFile": "/Users/alwo/bilbo/assets/$100M Sales Playbook.pdf",
+  "summaryDate": "2026-03-15",
+  "completenessNote": "Curated summary of the dense, already-summary-like sales manual. Structural groupings were preserved while repetitive or low-signal lines were condensed.",
+  "items": [
+    {
+      "id": "100m-sales-playbook-001",
+      "title": "Skill x conviction = close rate",
+      "type": "framework",
+      "problemsSolved": [
+        "Helps teams diagnose why technically competent reps still fail to close."
+      ],
+      "text": "The playbook argues that sales ability is not just script skill; conviction multiplies it. Strong belief improves tone, persistence, follow-up behavior, and willingness to push through discomfort in service of the prospect.",
+      "usageExample": [
+        "A manager can stack more calls immediately after hearing fresh customer wins because rep conviction peaks when proof is emotionally close."
+      ],
+      "sourceNotes": [
+        "Sections: Sales Is a Transfer of Belief"
+      ],
+      "relatedItems": []
+    },
+    {
+      "id": "100m-sales-playbook-002",
+      "title": "Tone carries the emotional message",
+      "type": "strategic",
+      "problemsSolved": [
+        "Helps reps understand that the same words can convert differently depending on delivery."
+      ],
+      "text": "Words target the logical brain, but tone often drives the emotional decision. This is why game tape of top reps during hot streaks is so valuable: small changes in pause, emphasis, and pace change results materially.",
+      "usageExample": [
+        "A sales team can compare two recordings with the same script but different close rates to isolate what changed in certainty, pacing, and emphasis."
+      ],
+      "sourceNotes": [
+        "Sections: Tone Is the Real Message"
+      ],
+      "relatedItems": []
+    },
+    {
+      "id": "100m-sales-playbook-003",
+      "title": "Selling is coaching, not pressure",
+      "type": "strategic",
+      "problemsSolved": [
+        "Helps reps replace neediness with service and moral clarity during the sale."
+      ],
+      "text": "The playbook reframes sales as coaching toward a defined outcome over a defined time period. Reps should care more about the buyer's result than the buyer's current comfort with change.",
+      "usageExample": [
+        "A fitness closer can challenge self-deception respectfully because the goal is to help the buyer change, not to avoid short-term discomfort."
+      ],
+      "sourceNotes": [
+        "Sections: Selling Is Coaching; The Person Who Cares More About the Prospect Wins; Kind, Not Nice"
+      ],
+      "relatedItems": []
+    },
+    {
+      "id": "100m-sales-playbook-004",
+      "title": "Master the boring fundamentals",
+      "type": "tactical",
+      "problemsSolved": [
+        "Helps teams improve closing without chasing clever tricks or improvisation too early."
+      ],
+      "text": "The book insists that great closers are not magical improvisers; they follow the script, prepare for each call, use proof-promise-plan, ask questions, and keep curiosity through objections. Mastery is doing the basics without lapses.",
+      "usageExample": [
+        "A manager can stop rewarding fancy deviations and instead coach reps to execute the same proven call structure with fewer misses."
+      ],
+      "sourceNotes": [
+        "Sections: Don\u2019t Be Cute; Say Less"
+      ],
+      "relatedItems": []
+    },
+    {
+      "id": "100m-sales-playbook-005",
+      "title": "Volume compounds skill faster than analysis",
+      "type": "strategic",
+      "problemsSolved": [
+        "Helps new reps cross the uncomfortable early stage where selling feels unnatural and unrewarding."
+      ],
+      "text": "The book frames sales as a reps game: more calls create more skill, which creates more reward, which encourages more calls. Beginners who avoid reps for study often stall in the flat part of the curve.",
+      "usageExample": [
+        "A new rep can deliberately work more conversations than the median performer, including weaker leads, to compress the learning cycle."
+      ],
+      "sourceNotes": [
+        "Sections: Volume Negates Luck; Be a Trash Man; Learning by Doing"
+      ],
+      "relatedItems": []
+    },
+    {
+      "id": "100m-sales-playbook-006",
+      "title": "Build the economics before you build the pitch",
+      "type": "framework",
+      "problemsSolved": [
+        "Helps businesses avoid trying to outsell a broken offer or weak unit economics."
+      ],
+      "text": "The sales playbook works backward from revenue targets, close rates, show rates, and outreach numbers, then overlays the value equation, LTGP, offer architecture, and price conviction. Sales skill cannot fix bad math forever.",
+      "usageExample": [
+        "A founder targeting $1M can calculate the daily booked calls and outreach needed, then redesign the offer if the required volume is unrealistic."
+      ],
+      "sourceNotes": [
+        "Sections: Business Math; The Value Equation; The Six Ways to Increase LTGP; Offer Architecture"
+      ],
+      "relatedItems": []
+    },
+    {
+      "id": "100m-sales-playbook-007",
+      "title": "Speed wins before the call even starts",
+      "type": "tactical",
+      "problemsSolved": [
+        "Helps businesses improve conversion through lead management rather than script changes alone."
+      ],
+      "text": "Responding in under 60 seconds, using same-day scheduling, keeping 15-minute slots, pulling calls forward, and managing reminders all improve the odds that the conversation happens while intent is still hot.",
+      "usageExample": [
+        "A home-services company can add a call-now button, require rapid follow-up, and move appointments earlier whenever possible to reduce no-shows and ghosting."
+      ],
+      "sourceNotes": [
+        "Sections: Before The Call \u2014 Lead Management & Prep"
+      ],
+      "relatedItems": []
+    },
+    {
+      "id": "100m-sales-playbook-008",
+      "title": "Use a structured conversation spine",
+      "type": "framework",
+      "problemsSolved": [
+        "Helps reps stay in control of the sales process without sounding robotic."
+      ],
+      "text": "The playbook uses the CLOSER framework, the proof-promise-plan opener, and a three-pillar pitch as the main spine of the call. These structures ensure discovery, belief, offer presentation, and reinforcement happen in the right order.",
+      "usageExample": [
+        "A sales team can teach one consistent call architecture to all reps, then coach nuance inside that structure rather than letting every rep invent their own flow."
+      ],
+      "sourceNotes": [
+        "Sections: The CLOSER Framework; The Three-Pillar Pitch; Proof-Promise-Plan"
+      ],
+      "relatedItems": []
+    },
+    {
+      "id": "100m-sales-playbook-009",
+      "title": "Handle objections with curiosity and reframing",
+      "type": "framework",
+      "problemsSolved": [
+        "Helps reps avoid treating objections as rejection and instead treat them as information gaps or friction points."
+      ],
+      "text": "The playbook groups objections into types and recommends childlike curiosity, negative framing, damaging admissions, the 3A reframing model, and stacked closes. The rep stays in dialogue rather than flinching at the first sign of resistance.",
+      "usageExample": [
+        "When a prospect says 'I need to think about it,' the rep can slow down, diagnose the real category of resistance, and respond with the right frame instead of repeating benefits louder."
+      ],
+      "sourceNotes": [
+        "Sections: Objection Type Taxonomy; Childlike Curiosity; 3A Reframing; Getting Yes by Saying No; Damaging Admission; Stacking Closes"
+      ],
+      "relatedItems": []
+    },
+    {
+      "id": "100m-sales-playbook-010",
+      "title": "Never negotiate price just to save the close",
+      "type": "strategic",
+      "problemsSolved": [
+        "Helps businesses protect offer integrity and long-term economics under pressure."
+      ],
+      "text": "The playbook explicitly warns against dropping price to force a yes. Better moves include changing terms, downselling appropriately, adding value, or clarifying fit without teaching the market that the listed price is fake.",
+      "usageExample": [
+        "An agency rep can offer a narrower package or staged rollout instead of discounting the full offer below what the economics support."
+      ],
+      "sourceNotes": [
+        "Sections: The Down-Sell Framework; Never Negotiate Price to Close; Details Are Death Traps"
+      ],
+      "relatedItems": []
+    },
+    {
+      "id": "100m-sales-playbook-011",
+      "title": "Scale sales with systems, not hero reps",
+      "type": "strategic",
+      "problemsSolved": [
+        "Helps growing companies turn a few good closers into a reproducible sales organization."
+      ],
+      "text": "Later sections cover the rule of 100, sales multipliers, specialized roles, hiring, compensation, feedback speed, call reviews, script memorization, career ladders, and paired KPIs. The message is that sales scale when training, measurement, and management become infrastructure.",
+      "usageExample": [
+        "A founder-led team can separate setters from closers, record all calls, run weekly game tape reviews, and tie variable comp to the metrics that actually predict profitable performance."
+      ],
+      "sourceNotes": [
+        "Sections: Sales Team & Scaling Infrastructure; Rule of 100; Six C\u2019s; Training Infrastructure; Paired KPIs"
+      ],
+      "relatedItems": []
+    }
+  ]
+}

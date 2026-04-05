@@ -1,0 +1,136 @@
+{
+  "bookTitle": "$100M Pricing Playbook",
+  "sourceFile": "/Users/alwo/bilbo/assets/$100M Pricing Playbook.pdf",
+  "summaryDate": "2026-03-15",
+  "completenessNote": "Curated summary of the highest-leverage pricing ideas and implementation plays. Detailed walkthrough math and duplicate examples were condensed.",
+  "items": [
+    {
+      "id": "100m-pricing-playbook-001",
+      "title": "Profit is unnatural, so force it",
+      "type": "strategic",
+      "problemsSolved": [
+        "Helps owners stop assuming profit appears automatically if the business simply gets bigger."
+      ],
+      "text": "The playbook opens with the idea that profit must be engineered. Pricing decisions are therefore active design choices, not passive reflections of what everyone else charges.",
+      "usageExample": [
+        "A founder can treat pricing as a scheduled operating system review rather than a number that stays untouched for years."
+      ],
+      "sourceNotes": [
+        "Sections: Guiding Principles; Pricing To Make The Most Money"
+      ],
+      "relatedItems": []
+    },
+    {
+      "id": "100m-pricing-playbook-002",
+      "title": "Not all ways of doubling the business are equal",
+      "type": "framework",
+      "problemsSolved": [
+        "Helps businesses compare customer growth, repeat purchase, and price changes based on profit impact instead of just revenue impact."
+      ],
+      "text": "The genie thought experiment shows that doubling customers, doubling purchase frequency, and doubling price all affect profit differently. The book pushes owners to look at margin and cash consequences, not topline symmetry.",
+      "usageExample": [
+        "A subscription business might discover that a price increase or renewal improvement creates more profit than doubling acquisition while fulfillment costs rise."
+      ],
+      "sourceNotes": [
+        "Sections: Pricing To Make The Most Money"
+      ],
+      "relatedItems": []
+    },
+    {
+      "id": "100m-pricing-playbook-003",
+      "title": "Price based on economics, not broke competitors",
+      "type": "strategic",
+      "problemsSolved": [
+        "Helps businesses avoid anchoring to a market where everyone is undercharging."
+      ],
+      "text": "Hormozi's pricing rules are built around business economics and customer value rather than competitor averages. Following underpriced peers usually keeps a business stuck in the same weak economics they have.",
+      "usageExample": [
+        "A local service business can study its fulfillment cost, gross profit, and customer value instead of simply charging the middle of the market because that feels safe."
+      ],
+      "sourceNotes": [
+        "Sections: Three Models of Pricing; My Rules For Pricing"
+      ],
+      "relatedItems": []
+    },
+    {
+      "id": "100m-pricing-playbook-004",
+      "title": "28-day billing quietly raises annual revenue",
+      "type": "tactical",
+      "problemsSolved": [
+        "Helps recurring-revenue businesses collect more over a year without a blunt headline price increase."
+      ],
+      "text": "Switching from monthly billing to every 28 days creates an extra billing cycle over the year. The play is operationally simple but economically meaningful for the right business.",
+      "usageExample": [
+        "A gym or membership community can move from monthly autopay to every-28-days billing to increase annual cash collected per member."
+      ],
+      "sourceNotes": [
+        "Sections: Pricing Play #1: Monthly To 28 Day Billing Cycles"
+      ],
+      "relatedItems": []
+    },
+    {
+      "id": "100m-pricing-playbook-005",
+      "title": "Pass through costs instead of silently eating them",
+      "type": "tactical",
+      "problemsSolved": [
+        "Helps businesses protect margin from payment processing fees, taxes, and similar leaks."
+      ],
+      "text": "Several pricing plays focus on shifting unavoidable cost burdens back into the pricing model rather than allowing small leaks to accumulate unnoticed. The principle is that hidden margin loss compounds fast.",
+      "usageExample": [
+        "A merchant can add processing-fee recovery, a second payment method, or explicit tax handling rather than letting those costs quietly compress gross profit."
+      ],
+      "sourceNotes": [
+        "Sections: Pricing Play #2 Processing Fees & Second Form of Payment; Pricing Play #3 Sales Tax"
+      ],
+      "relatedItems": []
+    },
+    {
+      "id": "100m-pricing-playbook-006",
+      "title": "Make annual increases a built-in habit",
+      "type": "tactical",
+      "problemsSolved": [
+        "Helps businesses avoid the pain of huge step changes by normalizing regular price maintenance."
+      ],
+      "text": "The annual increase play is about making repricing routine instead of waiting until the business is in trouble. Smaller, regular changes are easier to absorb than long stretches of avoidance followed by panic.",
+      "usageExample": [
+        "A software company can set a yearly review and notify customers of a modest annual adjustment tied to product improvements and inflation rather than freezing prices for years."
+      ],
+      "sourceNotes": [
+        "Sections: Pricing Play #4 Annual Price Increases"
+      ],
+      "relatedItems": []
+    },
+    {
+      "id": "100m-pricing-playbook-007",
+      "title": "Use payment structure as a pricing tool",
+      "type": "framework",
+      "problemsSolved": [
+        "Helps owners increase cash and retention by changing how buyers pay, not just what they pay."
+      ],
+      "text": "Annual billing, renewal fees, automatic continuity, and payment framing all affect customer behavior and cash flow. The book treats these structures as profit levers, not just checkout options.",
+      "usageExample": [
+        "A membership business can offer annual prepay, attach a renewal fee, or roll buyers into continuity to improve both cash position and expected retention."
+      ],
+      "sourceNotes": [
+        "Sections: Pricing Play #5 Annual Billing; #7 Annual Renewal Fee; #8 Automatic Continuity"
+      ],
+      "relatedItems": []
+    },
+    {
+      "id": "100m-pricing-playbook-008",
+      "title": "Anchor value upward before the main offer",
+      "type": "tactical",
+      "problemsSolved": [
+        "Helps the core offer feel more reasonable and valuable by showing a much more expensive reference point first."
+      ],
+      "text": "The ultra-high-ticket anchor and guarantee or warranty upsell plays raise perceived value and improve monetization without discounting the core. The idea is to expand the pricing context around the buyer.",
+      "usageExample": [
+        "An agency could show a high-end done-for-you package first, making the standard package look like the sensible middle choice, then add a paid guarantee extension for buyers who want extra assurance."
+      ],
+      "sourceNotes": [
+        "Sections: Pricing Play #9 Ultra High Ticket Anchor; #10 Guarantee and Warranty Upsells"
+      ],
+      "relatedItems": []
+    }
+  ]
+}

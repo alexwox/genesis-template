@@ -1,0 +1,104 @@
+{
+  "bookTitle": "$100M Lost Chapters by Alex Hormozi",
+  "sourceFile": "/Users/alwo/bilbo/assets/$100M Lost Chapters by Alex Hormozi.pdf",
+  "summaryDate": "2026-03-15",
+  "completenessNote": "Curated summary of the highest-leverage chapters from the anthology. Because the book is a compilation, the summary focuses on the reusable standalone frameworks.",
+  "items": [
+    {
+      "id": "100m-lost-chapters-by-alex-hormozi-001",
+      "title": "Pick your first avatar with rigor",
+      "type": "framework",
+      "problemsSolved": [
+        "Helps founders avoid choosing a market based on intuition, novelty, or personal preference alone."
+      ],
+      "text": "Hormozi positions the avatar chapter as one of the most important in the collection because market choice compounds everything downstream. The point is to start with a buyer group whose economics, pain, and accessibility make the rest of the business easier.",
+      "usageExample": [
+        "A consultant choosing between dentists and restaurant owners could score both markets on pain, budget, urgency, and ease of reach before building offers or ads."
+      ],
+      "sourceNotes": [
+        "Sections: Your First Avatar"
+      ],
+      "relatedItems": []
+    },
+    {
+      "id": "100m-lost-chapters-by-alex-hormozi-002",
+      "title": "Use promotions intentionally: premium, free, and discount",
+      "type": "framework",
+      "problemsSolved": [
+        "Helps businesses choose the right promotional mechanism for the buying context instead of defaulting to discounts."
+      ],
+      "text": "The 'Attract' section separates premium, free, and discount promotions because each attracts different buyers and creates different economics. Used carelessly, promotions can cheapen the offer; used well, they create movement without damaging the business.",
+      "usageExample": [
+        "A premium service could use a free diagnostic to start conversations, a premium promotion to monetize urgency, and avoid discounting the core engagement whenever possible."
+      ],
+      "sourceNotes": [
+        "Sections: Premium Promotions; Free Promotions; Discount Promotions"
+      ],
+      "relatedItems": []
+    },
+    {
+      "id": "100m-lost-chapters-by-alex-hormozi-003",
+      "title": "Customer-financed acquisition depends on three levers",
+      "type": "framework",
+      "problemsSolved": [
+        "Helps owners know whether acquisition can scale safely or is draining the business."
+      ],
+      "text": "The book revisits CAC, LTGP, and payback period as the core variables behind customer-financed acquisition. These metrics show whether growth funds itself or creates fragile cash pressure.",
+      "usageExample": [
+        "A company with strong LTGP but a long payback may still need payment-term changes or front-end monetization before it can scale ad spend aggressively."
+      ],
+      "sourceNotes": [
+        "Sections: The Three Levers of CFA; CAC; LTGP; Payback Period; Levels of Customer Financed Acquisition"
+      ],
+      "relatedItems": []
+    },
+    {
+      "id": "100m-lost-chapters-by-alex-hormozi-004",
+      "title": "Use the value grid and advanced offer stacking",
+      "type": "framework",
+      "problemsSolved": [
+        "Helps businesses build better monetization paths across front-end, back-end, and continuity offers."
+      ],
+      "text": "The advanced stacking chapters organize offer design across attraction, upsell, and continuity layers. The value grid helps map what to offer next so customers can keep buying without the model feeling random.",
+      "usageExample": [
+        "A software company might combine a freemium entry point, a paid implementation upsell, and a continuity-based premium support tier rather than relying on one flat product."
+      ],
+      "sourceNotes": [
+        "Sections: Back End The Value Grid; Advanced Offer Stacking: How To"
+      ],
+      "relatedItems": []
+    },
+    {
+      "id": "100m-lost-chapters-by-alex-hormozi-005",
+      "title": "Deploy alternative attraction offers when the main close is too much friction",
+      "type": "tactical",
+      "problemsSolved": [
+        "Helps businesses widen the top of the funnel without collapsing value on the core offer."
+      ],
+      "text": "The anthology includes attraction mechanisms like free presentations, freemium, and pick-your-price structures. These lower-friction entries work when the full sale is too large a first step for a cold buyer.",
+      "usageExample": [
+        "A consultant can host a free workshop that demonstrates the problem and then use that to feed paid strategy calls instead of trying to sell a large retainer cold."
+      ],
+      "sourceNotes": [
+        "Sections: Attraction Offer: Free Presentations; Freemium; Free Pick Your Price"
+      ],
+      "relatedItems": []
+    },
+    {
+      "id": "100m-lost-chapters-by-alex-hormozi-006",
+      "title": "Separate maker work from manager work",
+      "type": "strategic",
+      "problemsSolved": [
+        "Helps growing operators stop confusing hands-on production with the work of scaling a team."
+      ],
+      "text": "The later employee chapters distinguish between doing the work and building the system that gets the work done. This is useful once the founder becomes the bottleneck by staying trapped in maker mode.",
+      "usageExample": [
+        "A founder who still writes every ad personally can move into manager mode by defining the standard, training the team, and reviewing output instead of producing every asset from scratch."
+      ],
+      "sourceNotes": [
+        "Sections: Expanded Employees Chapter; Maker or Manager?"
+      ],
+      "relatedItems": []
+    }
+  ]
+}

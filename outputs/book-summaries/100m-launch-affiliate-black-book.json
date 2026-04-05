@@ -1,0 +1,127 @@
+{
+  "bookTitle": "$100M Launch Affiliate Black Book",
+  "sourceFile": "/Users/alwo/bilbo/assets/$100M Launch Affiliate Black Book.pdf",
+  "summaryDate": "2026-03-15",
+  "completenessNote": "Reviewed the full machine-readable handbook. Focused on the reusable campaign architecture, channel strategy, incentive design, countdown sequencing, and copy rules rather than preserving near-duplicate channel templates line by line.",
+  "items": [
+    {
+      "id": "single-offer-spine",
+      "title": "Run one core message across every channel",
+      "type": "framework",
+      "problemsSolved": [
+        "Campaigns sounding inconsistent across channels",
+        "Affiliates reinventing the pitch for every post"
+      ],
+      "text": "The handbook repeats the same persuasive spine in ads, emails, texts, posts, and videos: a free event, a specific business payoff, a secret project available live, and a clear registration CTA. Repetition is intentional because consistency increases recognition and lowers creative friction for affiliates.",
+      "usageExample": [
+        "A partner launch keeps the same promise in Meta ads, email, and creator videos, only changing formatting and tone to fit the channel."
+      ],
+      "sourceNotes": [
+        "Campaign overview, Meta ad copy, email countdown, SMS and social templates."
+      ],
+      "relatedItems": [
+        "countdown-cadence",
+        "shared-upside-link"
+      ]
+    },
+    {
+      "id": "countdown-cadence",
+      "title": "Use a tightening countdown cadence to intensify urgency",
+      "type": "framework",
+      "problemsSolved": [
+        "Registrants forgetting to attend",
+        "Promotions losing momentum between launch announcement and event day"
+      ],
+      "text": "The campaign uses reminders at 21 days, 14 days, 7 days, 4 days, 24 hours, and live now. The timing compresses naturally toward the event while repeating the same reasons to attend and the same downside of missing the live-only asset.",
+      "usageExample": [
+        "A webinar campaign sends weekly reminders first, then several close-in reminders that focus on what attendees lose by not showing up live."
+      ],
+      "sourceNotes": [
+        "Email Countdown Sequence and SMS reminder."
+      ],
+      "relatedItems": [
+        "single-offer-spine",
+        "live-only-urgency"
+      ]
+    },
+    {
+      "id": "shared-upside-link",
+      "title": "Give people a reason to use the affiliate link beyond helping you",
+      "type": "strategicInsight",
+      "problemsSolved": [
+        "Affiliate links feeling self-serving",
+        "Weak motivation to share beyond the first touch"
+      ],
+      "text": "The handbook repeatedly frames the link as a path to shared bonuses, not just commissions or leaderboard status for the affiliate. This makes the referral feel like a mutual upside mechanism rather than a one-sided ask.",
+      "usageExample": [
+        "A creator says, Use my link so we both unlock the bonus training when we hit the next milestone."
+      ],
+      "sourceNotes": [
+        "Email templates, friend texts, Slack messages, affiliate prize references."
+      ],
+      "relatedItems": [
+        "single-offer-spine",
+        "come-with-me-framing"
+      ]
+    },
+    {
+      "id": "live-only-urgency",
+      "title": "Make the main bonus contingent on live attendance",
+      "type": "tacticalIdea",
+      "problemsSolved": [
+        "Registrants signing up but not attending",
+        "Event offers feeling optional"
+      ],
+      "text": "The secret project is positioned as available only to people who show up live. This turns the registration CTA into a commitment cue rather than a low-stakes placeholder and gives every reminder a concrete urgency lever.",
+      "usageExample": [
+        "A virtual summit gives away a premium worksheet or software bonus only to live attendees, not replay watchers."
+      ],
+      "sourceNotes": [
+        "Meta ads, email sequence, SMS, social posts, YouTube outlines."
+      ],
+      "relatedItems": [
+        "countdown-cadence",
+        "single-offer-spine"
+      ]
+    },
+    {
+      "id": "come-with-me-framing",
+      "title": "Frame promotion as an invitation to attend together",
+      "type": "strategicInsight",
+      "problemsSolved": [
+        "Promotions sounding like affiliate spam",
+        "Cold social posts getting low response"
+      ],
+      "text": "Many templates use a come with me posture: I am going, I think this will help us, and we can unlock bonuses together. That framing lowers sales pressure and increases social acceptability of the ask.",
+      "usageExample": [
+        "A founder posts, I am registered and tuning in live. If you want to come with me, here is the link so we can unlock the extra goodies."
+      ],
+      "sourceNotes": [
+        "Friend texts, team messages, organic social posts, YouTube outline."
+      ],
+      "relatedItems": [
+        "shared-upside-link",
+        "countdown-cadence"
+      ]
+    },
+    {
+      "id": "hormozi-copy-rules",
+      "title": "Use simple, active, compressed copy",
+      "type": "framework",
+      "problemsSolved": [
+        "Affiliate copy sounding corporate or bloated",
+        "Messages losing clarity when adapted across channels"
+      ],
+      "text": "The handbook ends with a strict copy style guide: write below third-grade reading level, use present tense and active voice, avoid adverbs, shorten sentences, prefer positive phrasing, and cut redundant words. This keeps promotional copy fast to read and easy to forward.",
+      "usageExample": [
+        "Replace We utilize leverage to gain higher returns with We borrow money to buy bigger stuff and make more."
+      ],
+      "sourceNotes": [
+        "Alex Hormozi Writing Guidelines section."
+      ],
+      "relatedItems": [
+        "single-offer-spine"
+      ]
+    }
+  ]
+}

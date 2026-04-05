@@ -1,0 +1,136 @@
+{
+  "bookTitle": "$100M Offers - Alex Hormozi",
+  "sourceFile": "/Users/alwo/bilbo/assets/$100M Offers - Alex Hormozi.pdf",
+  "summaryDate": "2026-03-15",
+  "completenessNote": "Curated summary of the book's key offer-design frameworks. Front matter, testimonials, and non-business pages were intentionally excluded.",
+  "items": [
+    {
+      "id": "100m-offers-alex-hormozi-001",
+      "title": "Start with a starving crowd",
+      "type": "strategic",
+      "problemsSolved": [
+        "Helps founders avoid building offers for markets that are too indifferent, too poor, or too hard to move."
+      ],
+      "text": "The book repeatedly emphasizes that the market matters as much as the offer. It is easier to sell to people with painful, expensive, urgent problems than to persuade an apathetic audience to care.",
+      "usageExample": [
+        "A business choosing between hobby knitters and owners of failing home-service companies should usually prefer the latter if the goal is to sell premium help quickly."
+      ],
+      "sourceNotes": [
+        "Sections: Pricing; Finding The Right Market -- A Starving Crowd"
+      ],
+      "relatedItems": []
+    },
+    {
+      "id": "100m-offers-alex-hormozi-002",
+      "title": "Grand Slam Offer",
+      "type": "framework",
+      "problemsSolved": [
+        "Helps businesses design offers so compelling that the buyer feels stupid saying no."
+      ],
+      "text": "Hormozi's Grand Slam Offer is the combination of pricing, value creation, risk reduction, and offer presentation that makes the purchase unusually attractive relative to alternatives. It is not one tactic; it is the whole package working together.",
+      "usageExample": [
+        "A business can combine a sharp promise, clear delivery path, proof, guarantee, and high-value bonuses into one offer that makes a standard competitor look weak."
+      ],
+      "sourceNotes": [
+        "Sections: Grand Slam Offers; Start Here"
+      ],
+      "relatedItems": []
+    },
+    {
+      "id": "100m-offers-alex-hormozi-003",
+      "title": "Value Equation",
+      "type": "framework",
+      "problemsSolved": [
+        "Helps teams increase perceived value in a structured way instead of guessing what buyers will pay more for."
+      ],
+      "text": "Value equals dream outcome times perceived likelihood of achievement divided by time delay and effort or sacrifice. Better offers either raise the desirability and certainty of the result or reduce the friction and waiting required to get it.",
+      "usageExample": [
+        "A bookkeeping service could increase value by promising faster cash-flow visibility, adding proof from similar businesses, shortening onboarding time, and minimizing owner effort with done-for-you data collection."
+      ],
+      "sourceNotes": [
+        "Sections: Value Offer: The Value Equation"
+      ],
+      "relatedItems": []
+    },
+    {
+      "id": "100m-offers-alex-hormozi-004",
+      "title": "Charge what it is worth, not what competitors charge",
+      "type": "strategic",
+      "problemsSolved": [
+        "Helps businesses escape commodity pricing and the margin trap created by competitor-led pricing."
+      ],
+      "text": "The pricing chapters argue that competitors are a bad reference point because many of them are undercharging and underperforming. The better question is what the result is worth to the customer and how strongly the offer delivers it.",
+      "usageExample": [
+        "A recruiting agency that helps a company avoid a six-figure bad hire should not price itself based on hourly labor rates alone."
+      ],
+      "sourceNotes": [
+        "Sections: Pricing: The Commodity Problem; Pricing: Charge What It\u2019s Worth"
+      ],
+      "relatedItems": []
+    },
+    {
+      "id": "100m-offers-alex-hormozi-005",
+      "title": "Map all problems and all solutions before packaging",
+      "type": "tactical",
+      "problemsSolved": [
+        "Helps offer builders uncover what the buyer really needs before deciding what to include."
+      ],
+      "text": "Hormozi recommends listing every obstacle, every step, and every before-and-after issue the buyer encounters. Only then should the offer be assembled, because better packaging starts from a fuller picture of the buyer's path.",
+      "usageExample": [
+        "A course creator could map not only what students need to learn, but also motivation drops, setup hurdles, implementation fears, and post-win next problems before finalizing the offer."
+      ],
+      "sourceNotes": [
+        "Sections: Creating Your Grand Slam Offer Part I: Problems & Solutions"
+      ],
+      "relatedItems": []
+    },
+    {
+      "id": "100m-offers-alex-hormozi-006",
+      "title": "Use the delivery cube to generate offer components",
+      "type": "framework",
+      "problemsSolved": [
+        "Helps businesses find higher-value delivery combinations instead of defaulting to one standard format."
+      ],
+      "text": "The delivery cube expands thinking across group ratio, buyer effort, support level, medium, and speed. It is a structured way to invent delivery variations that can raise perceived value or improve margins.",
+      "usageExample": [
+        "A consultant can compare DIY templates, done-with-you workshops, and done-for-you implementation with different support channels to find the best balance of attractiveness and scalability."
+      ],
+      "sourceNotes": [
+        "Sections: Delivery thinking; Delivery Cube concepts"
+      ],
+      "relatedItems": []
+    },
+    {
+      "id": "100m-offers-alex-hormozi-007",
+      "title": "Trim and stack",
+      "type": "framework",
+      "problemsSolved": [
+        "Helps businesses keep the highest-value components and remove low-value complexity from the offer."
+      ],
+      "text": "After generating many possible components, the next move is to trim what is slow, weak, or costly and stack the strongest pieces into one compelling package. The offer should feel richer to the buyer while staying deliverable for the business.",
+      "usageExample": [
+        "A service business might remove low-impact weekly calls but stack a kickoff intensive, a KPI dashboard, and a premium troubleshooting channel because those create more perceived value."
+      ],
+      "sourceNotes": [
+        "Sections: Creating Your Grand Slam Offer Part II: Trim & Stack"
+      ],
+      "relatedItems": []
+    },
+    {
+      "id": "100m-offers-alex-hormozi-008",
+      "title": "Enhancers: scarcity, urgency, bonuses, guarantees, naming",
+      "type": "framework",
+      "problemsSolved": [
+        "Helps strong offers convert faster by increasing perceived value and reducing hesitation at the decision moment."
+      ],
+      "text": "Once the core offer is solid, the conversion enhancers make it more compelling. Scarcity limits access, urgency compresses action, bonuses solve objections, guarantees reduce risk, and naming improves memorability and perceived specificity.",
+      "usageExample": [
+        "A high-ticket program could cap intake, set a cohort deadline, add implementation bonuses, include a performance guarantee, and give the package a concrete transformation-focused name."
+      ],
+      "sourceNotes": [
+        "Sections: Enhancing The Offer; Scarcity; Urgency; Bonuses; Guarantees; Naming"
+      ],
+      "relatedItems": []
+    }
+  ]
+}

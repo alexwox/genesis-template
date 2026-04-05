@@ -1,0 +1,37 @@
+---
+alwaysApply: true
+---
+
+Update this file to keep note of how to maintain this repo!
+
+<EarlyStageDatabase>
+- During initial bootstrap, if the Neon database is empty, prefer resetting Drizzle migration history and re-baselining from Better Auth generated schema instead of layering rename/fix-up migrations.
+</EarlyStageDatabase>
+
+<Auth>
+- Keep Better Auth organization roles, custom access-control statements, and Drizzle auth schema changes in sync across `lib/auth.ts`, `lib/auth-client.ts`, and `lib/auth/permissions.ts`.
+- Treat `organizationId` as the tenant boundary on business tables and keep cross-org sharing disabled unless there is an explicit product requirement and server-side enforcement plan.
+- Keep `/` aligned with Better Auth active organization state so signed-in users resume in their latest visited workspace instead of falling back to the public landing page.
+</Auth>
+
+<Logging>
+- Use `@/lib/logger` instead of raw `console.*` in app code so logs stay structured and level-aware.
+- Create scoped loggers with `logger.child({ scope: "feature.area" })` near the entry point you are working in.
+- Prefer stable human-readable messages plus structured metadata as the second argument.
+- Use `trace`/`debug` for local diagnostics, `info` for normal lifecycle events, `warn` for recoverable anomalies, `error` for failures, and `fatal` only for unrecoverable startup or shutdown paths.
+- Never log secrets, auth tokens, passwords, cookies, raw authorization headers, or full request bodies that may contain sensitive data.
+- Control verbosity with the `LOG_LEVEL` environment variable instead of sprinkling temporary logs through the codebase.
+</Logging>
+
+<ExternalIntegrations>
+- Keep reusable protocol logic for third-party systems in `lib/<integration>/` modules, and keep Next.js/tRPC/request-context concerns in thin adapters.
+</ExternalIntegrations>
+
+<Frontend>
+- When using `next-themes` with React 19 / Next 16, mount-gate theme-dependent icons and labels to avoid hydration mismatches, and treat the React `<script>` warning from `next-themes` as an upstream false positive until the package ships a fix.
+</Frontend>
+
+<CodeHygiene>
+- Prefer `@/lib/try-catch` for result-style async handling in UI submit flows and thin server adapters; keep explicit `try/catch` for rollback-centric transactional paths.
+- Prefer `@/lib/error-utils` for user-safe unknown-error formatting instead of duplicating ad hoc `getErrorMessage` helpers per component.
+</CodeHygiene>

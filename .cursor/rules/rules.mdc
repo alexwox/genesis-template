@@ -1,0 +1,59 @@
+---
+alwaysApply: true
+---
+
+<Technical_communication>
+
+- When explaining stuff that are domain specific, take your time to break it down one layer beneth the obvious
+- Give clear examples, and explain domain terminology that is outside of what's obvious for a web developer
+  </Technical_communication>
+
+<General>
+- Write clean, readable code with clear separation of concerns.
+- Highlight risks and codesmells that you come across. We want to use the scout principle, always improving codesmells if we find them. Consistenly leave files in a better state than you found them - if possible.
+- Prefer simple composition, clear data flow, and minimal coupling between modules.
+- Keep code as typesafe as the language and project allow; avoid `any` and only use `unknown` at boundaries with proper narrowing.
+- If the codebase has architecture docs or decision records, update the relevant ones when behavior, data flow, or invariants change. Include:
+  - What changed
+  - Why
+  - Impact
+  - Entry points
+- Add or update tests in line with the project's existing test strategy when behavior changes.
+- Run the project's validation, formatting, linting, or pre-commit checks before handoff when available, and fix failures with real refactors rather than shortcuts.
+- Use the project's existing logging or observability approach when adding logs; prefer structured logs and appropriate log levels.
+  </General>
+
+<TypeGeneration>
+- Prefer schema-, framework-, protocol-, or ORM-generated types over handwritten duplicate types when the stack supports them.
+- Derive types from the source of truth where possible so shared contracts stay in sync.
+- Reuse shared types or data contracts instead of redefining the same shape in multiple places.
+</TypeGeneration>
+
+<UI>
+- When working in UI code, use simple patterns and keep data fetching and state ownership in intentional layers.
+- Prefer composition over unnecessary prop drilling or avoidable global state.
+- Follow the project's existing data access, state management, and component composition conventions.
+</UI>
+
+<Important>
+- Prefer the project's shared error-handling helpers and patterns when available, including result-style flows where appropriate.
+- Use early returns to avoid unnecessary indentation and keep control flow readable.
+- Optimize for readability first.
+</Important>
+
+<Styling>
+- Prefer the project's existing component library, design system, or styling conventions when present.
+- Follow the codebase's branding, accessibility, and visual style guidance when present.
+- Use ShadCn UI
+</Styling>
+
+<ProblemSolving>
+- When assumptions break or data is in the wrong shape, inspect the source and verify the real contract before changing code.
+- When a library behaves unexpectedly, consult official documentation instead of guessing.
+</ProblemSolving>
+
+<Linting>
+- Follow the codebase's configured linting, formatting, and pre-commit rules.
+- Respect file-specific overrides that already exist in the project instead of forcing one set of limits everywhere.
+- If the codebase provides automated fix commands, use the project-approved one and rerun validation afterward.
+</Linting>

@@ -1,0 +1,88 @@
+{
+  "bookTitle": "$100M Leads Warm Outreach Downloads",
+  "sourceFile": "/Users/alwo/bilbo/assets/$100M Leads Warm Outreach Downloads.pdf",
+  "summaryDate": "2026-03-15",
+  "completenessNote": "Curated summary of the warm setter and phone scripts. Repetitive script language was condensed into transferable sales mechanics.",
+  "items": [
+    {
+      "id": "100m-leads-warm-outreach-downloads-001",
+      "title": "Warm outreach should open with certainty and energy",
+      "type": "tactical",
+      "problemsSolved": [
+        "Helps setters make a stronger first impression and keep control of a live conversation."
+      ],
+      "text": "The scripts recommend opening as if you reached the right person, starting with enthusiasm, and avoiding timid phrasing. Tone and certainty matter because the first few seconds decide whether the prospect stays engaged.",
+      "usageExample": [
+        "Instead of saying 'Is this John?' a setter can lead with 'John?' in a positive tone and continue confidently once the person responds."
+      ],
+      "sourceNotes": [
+        "Sections: Notes; Script opener"
+      ],
+      "relatedItems": []
+    },
+    {
+      "id": "100m-leads-warm-outreach-downloads-002",
+      "title": "Discovery should paint the current pain and desired future",
+      "type": "framework",
+      "problemsSolved": [
+        "Helps setters uncover enough emotional and practical context to qualify and motivate the next step."
+      ],
+      "text": "The script moves from current state to goal, pain, impact, and future consequences so the prospect verbally reinforces why the problem matters. This increases commitment before the closer enters.",
+      "usageExample": [
+        "A fitness business can ask how long the issue has existed, what bad habits caused it, and what will happen in ten years if nothing changes, making the cost of inaction tangible."
+      ],
+      "sourceNotes": [
+        "Sections: Discovery; Dig; Get Real"
+      ],
+      "relatedItems": []
+    },
+    {
+      "id": "100m-leads-warm-outreach-downloads-003",
+      "title": "Recap before prescribing the next step",
+      "type": "tactical",
+      "problemsSolved": [
+        "Helps prospects feel understood before the business recommends the next call or asset."
+      ],
+      "text": "The setter script repeatedly recaps the prospect's goal, timeline, and pain points before offering a recommendation. This makes the transition feel earned rather than pushy.",
+      "usageExample": [
+        "A B2B setter can summarize the prospect's current funnel issue and revenue goal before explaining why a specialist review call makes sense."
+      ],
+      "sourceNotes": [
+        "Sections: Setter Script; Recap; Share my .02"
+      ],
+      "relatedItems": []
+    },
+    {
+      "id": "100m-leads-warm-outreach-downloads-004",
+      "title": "Book the next step inside 36 hours",
+      "type": "tactical",
+      "problemsSolved": [
+        "Helps businesses preserve urgency between the initial conversation and the closer call."
+      ],
+      "text": "The script explicitly pushes for a near-term appointment, ideally within a day or two. Short booking windows reduce drop-off and keep the prospect emotionally engaged with the opportunity.",
+      "usageExample": [
+        "After a productive setter call, the rep can offer tomorrow or the next day rather than 'sometime next week,' preserving momentum."
+      ],
+      "sourceNotes": [
+        "Sections: Setter Script; Set time within 36 hours"
+      ],
+      "relatedItems": []
+    },
+    {
+      "id": "100m-leads-warm-outreach-downloads-005",
+      "title": "Call discipline multiplies contact rate",
+      "type": "tactical",
+      "problemsSolved": [
+        "Helps teams improve connect rates and lower the number of leads lost to weak rep behavior."
+      ],
+      "text": "The note section recommends smiling before dialing, removing distractions, double-dialing when needed, and finishing the conversation if the person answers. These simple behaviors improve connection quality without changing the market.",
+      "usageExample": [
+        "A setter team can adopt double-dial as a house rule and ban multitasking during live calls to increase pickup and booking rates quickly."
+      ],
+      "sourceNotes": [
+        "Sections: Notes; Double Dial; Finish the conversation"
+      ],
+      "relatedItems": []
+    }
+  ]
+}

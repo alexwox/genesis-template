@@ -1,0 +1,88 @@
+{
+  "bookTitle": "$100M Leads Cold Outreach Downloads",
+  "sourceFile": "/Users/alwo/bilbo/assets/$100M Leads Cold Outreach Downloads.pdf",
+  "summaryDate": "2026-03-15",
+  "completenessNote": "Curated summary of the cold outreach scripts and process cues. Script wording was condensed into reusable mechanics.",
+  "items": [
+    {
+      "id": "100m-leads-cold-outreach-downloads-001",
+      "title": "Start cold outreach with a low-friction question",
+      "type": "tactical",
+      "problemsSolved": [
+        "Helps cold outreach get replies from strangers by asking for engagement before asking for commitment."
+      ],
+      "text": "The download pack repeatedly uses ultra-simple openers such as 'Are you still looking to...' so the first ask is easy to answer. The goal is to start a conversation, not to close in the first line.",
+      "usageExample": [
+        "A SaaS company could message prospects with 'Still looking to reduce churn in your membership base?' rather than a paragraph about its product and features."
+      ],
+      "sourceNotes": [
+        "Sections: Cold Email & DM Scripts; Are you still looking to..."
+      ],
+      "relatedItems": []
+    },
+    {
+      "id": "100m-leads-cold-outreach-downloads-002",
+      "title": "Keep the first message plain text and frictionless",
+      "type": "tactical",
+      "problemsSolved": [
+        "Helps cold messages avoid looking like automated spam or obvious marketing collateral."
+      ],
+      "text": "The pack explicitly recommends no images, no links, no frills, and often just a single question. Simple messages create curiosity and lower the resistance to replying.",
+      "usageExample": [
+        "A consultant can send a plain-text LinkedIn message with one clear question and hold the booking link for the follow-up after the prospect engages."
+      ],
+      "sourceNotes": [
+        "Sections: Cold Email & DM Scripts"
+      ],
+      "relatedItems": []
+    },
+    {
+      "id": "100m-leads-cold-outreach-downloads-003",
+      "title": "Relate first, then transition to the problem",
+      "type": "tactical",
+      "problemsSolved": [
+        "Helps outreach feel human enough to answer while still moving quickly toward qualification."
+      ],
+      "text": "The outreach scripts use small personalized observations to open, then pivot fast into the business problem being solved. Rapport is meant to reduce friction, not to become endless small talk.",
+      "usageExample": [
+        "A fitness coach might note a detail from a prospect's profile, then quickly ask whether work or family schedule makes training consistency difficult."
+      ],
+      "sourceNotes": [
+        "Sections: Messenger Setter Script; Open; Relate; Transition"
+      ],
+      "relatedItems": []
+    },
+    {
+      "id": "100m-leads-cold-outreach-downloads-004",
+      "title": "Use pain, curiosity, then a live conversation",
+      "type": "framework",
+      "problemsSolved": [
+        "Helps setters move from casual reply to real sales opportunity without over-typing the whole solution."
+      ],
+      "text": "The sequence is acknowledge, clarify goal, label the problem, review past pain, create curiosity, and get on the phone. The scripts explicitly warn that typing the whole answer is slower and less effective than a short live call.",
+      "usageExample": [
+        "A marketing agency can ask what the prospect has tried, what results they wanted, and what keeps failing, then say it has ideas and suggest a quick call that day."
+      ],
+      "sourceNotes": [
+        "Sections: Sales Conversation Begins; Clarify Goal; Label With Problem; Overview Pain; Create Curiosity; Get On The Phone"
+      ],
+      "relatedItems": []
+    },
+    {
+      "id": "100m-leads-cold-outreach-downloads-005",
+      "title": "Speed and open loops keep cold outreach alive",
+      "type": "tactical",
+      "problemsSolved": [
+        "Helps businesses avoid losing momentum between reply, booking, and actual conversation."
+      ],
+      "text": "The scripts emphasize same-day movement, open loops around booking, and fast follow-up because time kills deals. Once the prospect responds, the process should compress rather than drag out.",
+      "usageExample": [
+        "If a lead says they will grab a time later, the setter can keep the chat open and follow up the same day instead of waiting several days and letting interest decay."
+      ],
+      "sourceNotes": [
+        "Sections: Get On The Phone; Follow Up; TKAD Time Kills All Deals"
+      ],
+      "relatedItems": []
+    }
+  ]
+}

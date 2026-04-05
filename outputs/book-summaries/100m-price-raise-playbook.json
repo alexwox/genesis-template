@@ -1,0 +1,104 @@
+{
+  "bookTitle": "$100M Price Raise Playbook",
+  "sourceFile": "/Users/alwo/bilbo/assets/$100M Price Raise Playbook.pdf",
+  "summaryDate": "2026-03-15",
+  "completenessNote": "Curated summary of the price-raise logic, communication framework, and rollout steps. Promotional filler and repeated examples were condensed.",
+  "items": [
+    {
+      "id": "100m-price-raise-playbook-001",
+      "title": "Raising price is often the fastest profit lever",
+      "type": "strategic",
+      "problemsSolved": [
+        "Helps businesses improve margins quickly without waiting for major operational or acquisition changes."
+      ],
+      "text": "The playbook argues that charging more for the same value is often the easiest path to higher profit, especially when the business is trapped in thin margins or underpriced relative to the result it creates.",
+      "usageExample": [
+        "A services firm with solid demand but weak cash flow may improve dramatically by repricing rather than immediately chasing more leads or more complexity."
+      ],
+      "sourceNotes": [
+        "Sections: Why Raising Prices Is A Good Idea"
+      ],
+      "relatedItems": []
+    },
+    {
+      "id": "100m-price-raise-playbook-002",
+      "title": "Avoid the race to the bottom",
+      "type": "strategic",
+      "problemsSolved": [
+        "Helps businesses understand why low pricing can attract worse customers and make delivery weaker over time."
+      ],
+      "text": "Hormozi contrasts a vicious cycle of low prices, low perceived value, weak results, and demanding customers with a virtuous cycle where better pricing funds better experience and stronger conviction. The point is not greed but reinforcing quality.",
+      "usageExample": [
+        "A gym that raises rates can use the extra gross profit to improve coaching, retention touches, and acquisition instead of constantly serving the most price-sensitive members poorly."
+      ],
+      "sourceNotes": [
+        "Sections: Vicious price cycle; Virtuous price cycle"
+      ],
+      "relatedItems": []
+    },
+    {
+      "id": "100m-price-raise-playbook-003",
+      "title": "Set the new price intentionally, not timidly",
+      "type": "tactical",
+      "problemsSolved": [
+        "Helps owners choose a price that actually changes the economics enough to matter."
+      ],
+      "text": "The book pushes for a price that creates a noticeable improvement in the business rather than a symbolic tweak. Small raises can still help, but the principle is to price for strategic impact, not emotional comfort.",
+      "usageExample": [
+        "If a membership business needs materially better unit economics, raising by 2% because it feels safe may do less than a more decisive repositioning paired with stronger communication."
+      ],
+      "sourceNotes": [
+        "Sections: How To Pick Your Price; My Rules For Raising Prices"
+      ],
+      "relatedItems": []
+    },
+    {
+      "id": "100m-price-raise-playbook-004",
+      "title": "Use the RAISE letter structure",
+      "type": "framework",
+      "problemsSolved": [
+        "Helps businesses communicate price changes without sounding defensive, abrupt, or careless."
+      ],
+      "text": "The playbook structures the message as remind them of value, address the change, invest in their future, soften with loyalty reward, and explain away concerns. This turns the announcement into a confidence-building communication rather than a cold notice.",
+      "usageExample": [
+        "A subscription business can email members using the RAISE order, then use the same structure in a short explainer video so the message feels thoughtful and consistent."
+      ],
+      "sourceNotes": [
+        "Sections: The Perfect Price Raise Letter; RAISE components"
+      ],
+      "relatedItems": []
+    },
+    {
+      "id": "100m-price-raise-playbook-005",
+      "title": "Reward loyalty while moving the business forward",
+      "type": "tactical",
+      "problemsSolved": [
+        "Helps companies preserve goodwill with existing customers without freezing economics forever."
+      ],
+      "text": "The book softens the news with loyalty rewards or transition terms instead of pretending the raise is painless. The goal is to honor tenure while still making the business healthier.",
+      "usageExample": [
+        "A founder can give current customers a delayed increase, grandfathered bonus, or temporary legacy rate while charging all new buyers the full updated price immediately."
+      ],
+      "sourceNotes": [
+        "Sections: Section #4 Soften the news with a loyalty reward; What To Do About Incoming Customers"
+      ],
+      "relatedItems": []
+    },
+    {
+      "id": "100m-price-raise-playbook-006",
+      "title": "Price raises are easier when paired with visible reinvestment",
+      "type": "strategic",
+      "problemsSolved": [
+        "Helps customers accept a raise when they can see what the extra money enables."
+      ],
+      "text": "The playbook recommends tying price increases to better service, more support, stronger product, or more resources. That makes the raise part of a quality story rather than a naked extraction.",
+      "usageExample": [
+        "A software company could announce higher pricing alongside faster support, new integrations, and more onboarding help so customers understand what is changing for them."
+      ],
+      "sourceNotes": [
+        "Sections: Why Raising Prices Is A Good Idea; The Perfect Price Raise Letter"
+      ],
+      "relatedItems": []
+    }
+  ]
+}

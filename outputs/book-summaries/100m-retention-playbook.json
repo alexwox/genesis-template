@@ -1,0 +1,104 @@
+{
+  "bookTitle": "$100M Retention Playbook",
+  "sourceFile": "/Users/alwo/bilbo/assets/$100M Retention Playbook.pdf",
+  "summaryDate": "2026-03-15",
+  "completenessNote": "Curated summary of the churn diagnosis and retention checklist. The summary focuses on repeatable retention mechanics rather than anecdotal setup.",
+  "items": [
+    {
+      "id": "100m-retention-playbook-001",
+      "title": "Treat churn as a leaky-bucket economics problem",
+      "type": "strategic",
+      "problemsSolved": [
+        "Helps businesses see retention failure as a growth-killer even when acquisition looks strong."
+      ],
+      "text": "The book frames high churn as a situation where the business must replace lost customers just to stand still. A business with strong front-end sales but weak retention eventually becomes fragile and exhausting.",
+      "usageExample": [
+        "A gym adding 20 members a month but losing 18 should prioritize churn reduction before pouring more money into lead generation."
+      ],
+      "sourceNotes": [
+        "Sections: Churn Checklist; What Is Churn?"
+      ],
+      "relatedItems": []
+    },
+    {
+      "id": "100m-retention-playbook-002",
+      "title": "Ask experts and find common factors",
+      "type": "framework",
+      "problemsSolved": [
+        "Helps operators solve retention through evidence from top performers rather than isolated opinion."
+      ],
+      "text": "Hormozi borrows a consulting method: ask multiple experts who already solved the problem, collect all answers, and look for overlap. The retention playbook was built from interviewing operators with unusually low churn.",
+      "usageExample": [
+        "A SaaS founder could interview the accounts with the highest retention and identify the common onboarding, usage, and support patterns they share."
+      ],
+      "sourceNotes": [
+        "Sections: Solving Problems Like The Big Boys"
+      ],
+      "relatedItems": []
+    },
+    {
+      "id": "100m-retention-playbook-003",
+      "title": "The 5 Horsemen of Retention",
+      "type": "framework",
+      "problemsSolved": [
+        "Helps teams focus on the highest-signal retention behaviors instead of random retention ideas."
+      ],
+      "text": "The core five are tracking attendance or usage, reaching out regularly, sending handwritten or personal touches, holding member events, and running exit interviews. Together they create visibility, relationship, and recovery opportunities before churn completes.",
+      "usageExample": [
+        "A membership business can monitor declining participation, check in twice weekly, run periodic community events, and require an exit conversation before cancellation completes."
+      ],
+      "sourceNotes": [
+        "Sections: The 5 Horsemen of Retention"
+      ],
+      "relatedItems": []
+    },
+    {
+      "id": "100m-retention-playbook-004",
+      "title": "Intervene at the first decline in usage",
+      "type": "tactical",
+      "problemsSolved": [
+        "Helps businesses save customers before cancellation behavior becomes irreversible."
+      ],
+      "text": "One of the strongest signals in the book is that attendance or usage drop is an early warning sign. The rescue window is often before the customer fully disengages, not after the cancellation is submitted.",
+      "usageExample": [
+        "A gym noticing a member dropped from three visits a week to two can trigger an immediate personal outreach before the member disappears entirely."
+      ],
+      "sourceNotes": [
+        "Sections: Track attendance"
+      ],
+      "relatedItems": []
+    },
+    {
+      "id": "100m-retention-playbook-005",
+      "title": "Expect churn to look worse before it gets healthier",
+      "type": "strategic",
+      "problemsSolved": [
+        "Helps teams stay disciplined when cleanup work initially reveals hidden cancellations or disengagement."
+      ],
+      "text": "The book calls this 'shaking the three'\u2014once a business starts cleaning up retention systems, some customers who were effectively gone finally cancel. That short-term spike can be a sign that the business is now measuring reality more honestly.",
+      "usageExample": [
+        "A software company cleaning up failed-payment flows and inactive accounts may see a temporary bump in cancellations before retention normalizes on a healthier base."
+      ],
+      "sourceNotes": [
+        "Sections: The 5 Horsemen Of Retention: Results"
+      ],
+      "relatedItems": []
+    },
+    {
+      "id": "100m-retention-playbook-006",
+      "title": "Retain by increasing value, visibility, and belonging",
+      "type": "strategic",
+      "problemsSolved": [
+        "Helps operators design retention as an ongoing customer-experience system rather than a last-minute save script."
+      ],
+      "text": "The book's anti-churn inversion is simple: do the opposite of what would cause everyone to leave. That means do not ignore people, break promises, hide progress, isolate them from happy customers, or make the product harder to use.",
+      "usageExample": [
+        "A community product can reduce churn by showing member progress, celebrating wins publicly, making onboarding easier, and keeping members around other successful users."
+      ],
+      "sourceNotes": [
+        "Sections: Price, Value, And Churn"
+      ],
+      "relatedItems": []
+    }
+  ]
+}
