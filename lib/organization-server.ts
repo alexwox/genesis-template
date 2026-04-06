@@ -1,4 +1,5 @@
 import { headers } from "next/headers";
+import { notFound } from "next/navigation";
 
 import { auth } from "@/lib/auth";
 import { getOrganizationPermissionState } from "@/lib/auth/permissions";
@@ -122,6 +123,15 @@ export async function getOrganizationPageData(organizationSlug: string) {
     permissions: getOrganizationPermissionState(context.activeMemberRole),
     session: context.session,
   };
+}
+
+/** Same fetch as {@link getOrganizationPageData}, then `notFound()` when missing. */
+export async function requireOrganizationPageData(organizationSlug: string) {
+  const data = await getOrganizationPageData(organizationSlug);
+  if (!data) {
+    notFound();
+  }
+  return data;
 }
 
 export async function getOrganizationRouteData(organizationSlug: string) {

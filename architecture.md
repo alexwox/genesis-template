@@ -79,6 +79,7 @@ flowchart TD
   - `app/page.tsx`
   - `app/not-found.tsx`
   - `app/reset-password/page.tsx`
+  - `app/o/[orgSlug]/layout.tsx`
   - `app/o/[orgSlug]/loading.tsx`
   - `app/o/[orgSlug]/error.tsx`
   - `app/o/[orgSlug]/not-found.tsx`
@@ -135,7 +136,7 @@ flowchart TD
 ### Organization Workspace Flow
 
 1. Signed-in users create or switch organizations from `components/organization-switcher.tsx`.
-2. Workspace routes under `/o/[orgSlug]` fetch org membership and org-scoped permissions through `lib/organization-server.ts`.
+2. Workspace routes under `/o/[orgSlug]` share `app/o/[orgSlug]/layout.tsx` (header + container) and load org membership and org-scoped permissions through `lib/organization-server.ts` (`requireOrganizationPageData` / `getOrganizationPageData`; underlying auth/org reads use React `cache()` in `lib/auth-session.ts`).
 3. Workspace selection in `components/organization-switcher.tsx` updates Better Auth active organization state before route navigation.
 4. Dashboard CRUD and sharing are enforced through `server/trpc/routers/dashboard.ts`.
 5. Org settings flows call Better Auth organization APIs from `components/organization-settings.tsx`.

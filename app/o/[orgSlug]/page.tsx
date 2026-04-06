@@ -1,8 +1,5 @@
-import { notFound } from "next/navigation";
-
 import { OrganizationWorkspace } from "@/components/organization-workspace";
-import { SiteHeader } from "@/components/site-header";
-import { getOrganizationPageData } from "@/lib/organization-server";
+import { requireOrganizationPageData } from "@/lib/organization-server";
 
 type OrganizationWorkspacePageProps = {
   params: Promise<{
@@ -14,22 +11,13 @@ export default async function OrganizationWorkspacePage({
   params,
 }: OrganizationWorkspacePageProps) {
   const { orgSlug } = await params;
-  const data = await getOrganizationPageData(orgSlug);
-
-  if (!data) {
-    notFound();
-  }
+  const data = await requireOrganizationPageData(orgSlug);
 
   return (
-    <main className="min-h-screen">
-      <SiteHeader />
-      <div className="mx-auto flex max-w-6xl flex-col gap-8 px-6 py-12">
-        <OrganizationWorkspace
-          canCreateDashboard={data.permissions.canCreateDashboard}
-          canManageDashboardShares={data.permissions.canManageDashboardShares}
-          organization={data.organization}
-        />
-      </div>
-    </main>
+    <OrganizationWorkspace
+      canCreateDashboard={data.permissions.canCreateDashboard}
+      canManageDashboardShares={data.permissions.canManageDashboardShares}
+      organization={data.organization}
+    />
   );
 }
