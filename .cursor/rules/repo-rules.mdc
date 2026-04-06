@@ -4,6 +4,11 @@ alwaysApply: true
 
 Update this file to keep note of how to maintain this repo!
 
+<DevelopingGenesis>
+- When starting a **new product** on this template (or onboarding an AI agent to a fresh fork), read **`docs/architecture/developing-genesis.md`** first. It consolidates template-time implementation cues, architectural boundaries, and extension patterns (billing vs credits/usage, multi-tenancy, where to add features, analytics/logging quirks) in one place.
+- That guide is a **dated snapshot** from when the template was completed (see the file header). Once the repo diverges from stock Genesis, treat **`architecture.md`** and **`docs/architecture/*`** as the living source of truth and cross-check anything that looks stale in `developing-genesis.md`.
+</DevelopingGenesis>
+
 <EarlyStageDatabase>
 - During initial bootstrap, if the Neon database is empty, prefer resetting Drizzle migration history and re-baselining from Better Auth generated schema instead of layering rename/fix-up migrations.
 </EarlyStageDatabase>
