@@ -25,6 +25,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { authClient } from "@/lib/auth-client";
 import { tryCatch } from "@/lib/try-catch";
+import posthog from "posthog-js";
 
 function getInitials(name: string, email: string) {
   const source = name.trim() || email.trim();
@@ -54,8 +55,16 @@ function UserMenu({
 
   async function handleSignOut() {
     setIsSigningOut(true);
-    await tryCatch(authClient.signOut());
+    const result = await tryCatch(authClient.signOut());
+    if (result.error) {
+      setIsSigningOut(false);
+      return;
+    }
+    if (process.env.NEXT_PUBLIC_POSTHOG_KEY) {
+      posthog.reset();
+    }
     setIsSigningOut(false);
+    router.replace("/");
   }
 
   return (

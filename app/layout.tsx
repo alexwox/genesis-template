@@ -3,6 +3,8 @@ import { Fraunces, Instrument_Sans } from "next/font/google";
 
 import "./globals.css";
 
+import { CookieConsentBanner } from "@/components/analytics/cookie-consent-banner";
+import { PostHogIdentify } from "@/components/analytics/posthog-identify";
 import { ThemeProvider } from "@/components/theme-provider";
 import { TRPCReactProvider } from "@/trpc/client";
 
@@ -34,7 +36,11 @@ export default function RootLayout({ children }: RootLayoutProps) {
     >
       <body>
         <ThemeProvider>
-          <TRPCReactProvider>{children}</TRPCReactProvider>
+          <TRPCReactProvider>
+            <PostHogIdentify />
+            {children}
+            <CookieConsentBanner />
+          </TRPCReactProvider>
         </ThemeProvider>
       </body>
     </html>
