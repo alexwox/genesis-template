@@ -1,6 +1,7 @@
 import { redirect } from "next/navigation";
 
 import { SiteHeader } from "../components/site-header";
+import { getHomePageJsonLd } from "@/lib/seo/home-json-ld";
 import { getHomeRedirectPath } from "@/lib/organization-server";
 
 export default async function HomePage() {
@@ -10,8 +11,16 @@ export default async function HomePage() {
     redirect(redirectPath);
   }
 
+  const jsonLd = getHomePageJsonLd();
+
   return (
     <main className="min-h-screen">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(jsonLd),
+        }}
+      />
       <SiteHeader />
 
       <div className="mx-auto flex min-h-[calc(100vh-76px)] max-w-6xl items-center px-6 py-16">

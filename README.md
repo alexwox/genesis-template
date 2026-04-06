@@ -39,8 +39,15 @@ A multi-tenant SaaS template with authentication, organizations, and a typed API
   - [`data-model-and-storage.md`](./docs/architecture/data-model-and-storage.md)
   - [`frontend-and-ux-flows.md`](./docs/architecture/frontend-and-ux-flows.md)
   - [`payments-and-billing.md`](./docs/architecture/payments-and-billing.md)
+  - [`seo-and-geo.md`](./docs/architecture/seo-and-geo.md)
 
 When you change auth boundaries, billing, data model, or major UX flows, update `architecture.md` and the relevant file under `docs/architecture/` (see the “Update Protocol” section in `architecture.md`).
+
+## SEO and GEO
+
+The template includes a minimal **technical** baseline: `metadataBase` and defaults in `app/layout.tsx`, `app/sitemap.ts`, `app/robots.ts`, JSON-LD on the public home page, `noindex` on org workspace routes under `/o/[orgSlug]`, and an optional `/llms.txt` route. Set **`SITE_URL`** and **`NEXT_PUBLIC_APP_URL`** to your canonical HTTPS origin in production (see `.env.example`).
+
+- **Playbook (checklists, file map, validation):** [`docs/architecture/seo-and-geo.md`](./docs/architecture/seo-and-geo.md)
 
 ## Getting Started
 
@@ -77,7 +84,10 @@ bun run dev
 
 ```
 app/                    # Next.js App Router pages and API routes
-  o/[orgSlug]/          # Org-scoped workspace routes
+  robots.ts             # /robots.txt
+  sitemap.ts            # /sitemap.xml
+  llms.txt/route.ts     # Optional /llms.txt for LLM crawlers
+  o/[orgSlug]/          # Org-scoped workspace routes (noindex)
   api/auth/             # Better Auth handler
   api/trpc/             # tRPC handler
   api/webhooks/resend/  # Resend webhook

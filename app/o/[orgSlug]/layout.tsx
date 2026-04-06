@@ -1,5 +1,14 @@
+import type { Metadata } from "next";
+
 import { SiteHeader } from "@/components/site-header";
 import { requireOrganizationPageData } from "@/lib/organization-server";
+
+export const metadata: Metadata = {
+  robots: {
+    index: false,
+    follow: false,
+  },
+};
 
 type OrganizationLayoutProps = {
   children: React.ReactNode;

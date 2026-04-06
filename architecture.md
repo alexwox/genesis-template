@@ -26,6 +26,8 @@ Genesis is a multi-tenant SaaS template built on Next.js App Router. It provides
 - `/api/webhooks/resend` receives signed Resend webhook events
 - `/api/billing/checkout`, `/api/billing/portal`, `/api/billing/access`, `/api/billing/sync` are authenticated billing helpers (delegate to `lib/payments/*`)
 - `/api/payments/webhooks/stripe` and `/api/payments/webhooks/polar` receive provider billing webhooks (raw body + signature verification)
+- `/sitemap.xml` and `/robots.txt` are generated from `app/sitemap.ts` and `app/robots.ts` (canonical host from `getSiteUrl()` in `lib/site-url.ts`)
+- `/llms.txt` (optional curated site summary for some LLM crawlers) is served from `app/llms.txt/route.ts`
 
 ## Cross-Cutting Invariants
 
@@ -39,6 +41,7 @@ Genesis is a multi-tenant SaaS template built on Next.js App Router. It provides
 - External service clients should keep their protocol logic inside reusable `lib/<integration>/` modules, with Next.js and tRPC concerns kept in thin adapters.
 - UI code should stay thin, with state and data flow owned intentionally near each entry point.
 - Billing entitlements and plan limits for feature gating should read from the local billing read model (`lib/payments/read-model.ts`), not from provider SDK objects in the browser.
+- **Public vs private indexing**: Marketing and other **public** pages inherit indexable defaults from `app/layout.tsx` (`metadataBase`, Open Graph). **Authenticated workspace** routes under `/o/[orgSlug]` set `robots` to `noindex, nofollow` in `app/o/[orgSlug]/layout.tsx`. Extend `app/sitemap.ts` only with URLs that should be discovered in search; keep app and API routes out unless product requirements say otherwise. Details: `docs/architecture/seo-and-geo.md`.
 
 ## Current Topology
 
@@ -95,6 +98,9 @@ flowchart TD
 - Frontend and UX
   - `app/layout.tsx`
   - `app/page.tsx`
+  - `app/robots.ts`
+  - `app/sitemap.ts`
+  - `app/llms.txt/route.ts`
   - `app/not-found.tsx`
   - `app/reset-password/page.tsx`
   - `app/o/[orgSlug]/layout.tsx`
@@ -148,6 +154,8 @@ flowchart TD
 - Shared runtime utilities
   - `lib/error-utils.ts`
   - `lib/logger.ts`
+  - `lib/site-url.ts`
+  - `lib/seo/home-json-ld.ts`
   - `lib/slug.ts`
   - `lib/try-catch.ts`
   - `lib/utils.ts`
@@ -184,6 +192,7 @@ flowchart TD
 - `docs/architecture/data-model-and-storage.md`
 - `docs/architecture/frontend-and-ux-flows.md`
 - `docs/architecture/payments-and-billing.md`
+- `docs/architecture/seo-and-geo.md`
 
 ## Update Protocol
 
@@ -191,7 +200,8 @@ When architecture-relevant behavior changes:
 
 1. Update this file if the system overview, topology, invariants, or source map changed.
 2. Add or update a focused file under `docs/architecture/` when a subsystem needs deeper explanation.
-3. Record, at minimum:
+3. If crawl policy, canonical host, or major public routes change, update `docs/architecture/seo-and-geo.md` and `app/sitemap.ts` / route metadata as needed.
+4. Record, at minimum:
    - what changed
    - why
    - impact
