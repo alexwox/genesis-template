@@ -12,6 +12,7 @@ Genesis is a multi-tenant SaaS template built on Next.js App Router. It provides
 - Shared UI primitives and auth flows in `components/`
 - Org-scoped dashboard and sharing tables as a reference workspace feature
 - R2/S3-compatible object storage utilities for file uploads
+- Provider-agnostic billing (Stripe or Polar) with a local Postgres billing mirror and webhook-driven sync
 
 ## Routes
 
@@ -23,6 +24,8 @@ Genesis is a multi-tenant SaaS template built on Next.js App Router. It provides
 - `/api/auth/[...all]` hosts Better Auth endpoints
 - `/api/trpc/[trpc]` hosts the tRPC entrypoint
 - `/api/webhooks/resend` receives signed Resend webhook events
+- `/api/billing/checkout`, `/api/billing/portal`, `/api/billing/access`, `/api/billing/sync` are authenticated billing helpers (delegate to `lib/payments/*`)
+- `/api/payments/webhooks/stripe` and `/api/payments/webhooks/polar` receive provider billing webhooks (raw body + signature verification)
 
 ## Cross-Cutting Invariants
 
@@ -35,6 +38,7 @@ Genesis is a multi-tenant SaaS template built on Next.js App Router. It provides
 - Database access flows through the shared Drizzle setup in `lib/db`.
 - External service clients should keep their protocol logic inside reusable `lib/<integration>/` modules, with Next.js and tRPC concerns kept in thin adapters.
 - UI code should stay thin, with state and data flow owned intentionally near each entry point.
+- Billing entitlements and plan limits for feature gating should read from the local billing read model (`lib/payments/read-model.ts`), not from provider SDK objects in the browser.
 
 ## Current Topology
 
@@ -48,9 +52,14 @@ flowchart TD
   ApiAuth[BetterAuthHandler]
   ApiTrpc[TRPCHandler]
   ApiWebhook[ResendWebhook]
+  ApiBilling[BillingApiRoutes]
+  ApiPayWh[PaymentsWebhooks]
   AuthConfig[AuthConfig]
+  PaymentsCore[PaymentsLib]
   Db[(Postgres)]
   Resend[Resend]
+  Stripe[Stripe]
+  Polar[Polar]
 
   Browser --> AppPages
   Browser --> WorkspacePages
@@ -58,7 +67,10 @@ flowchart TD
   Browser --> InvitePage
   Browser --> ApiAuth
   Browser --> ApiTrpc
+  Browser --> ApiBilling
   Resend --> ApiWebhook
+  Stripe --> ApiPayWh
+  Polar --> ApiPayWh
 
   AppPages --> AuthConfig
   WorkspacePages --> AuthConfig
@@ -67,9 +79,15 @@ flowchart TD
   InvitePage --> AuthConfig
   ApiAuth --> AuthConfig
   ApiTrpc --> AuthConfig
+  ApiBilling --> AuthConfig
+  ApiBilling --> PaymentsCore
+  ApiPayWh --> PaymentsCore
   AuthConfig --> Db
+  PaymentsCore --> Db
   AuthConfig --> Resend
   ApiWebhook --> Resend
+  PaymentsCore --> Stripe
+  PaymentsCore --> Polar
 ```
 
 ## Source Map By Concern
@@ -110,11 +128,23 @@ flowchart TD
   - `lib/email/resend.ts`
   - `lib/email/templates.ts`
   - `app/api/webhooks/resend/route.ts`
+- Payments and billing
+  - `lib/payments/service.ts`
+  - `lib/payments/read-model.ts`
+  - `lib/payments/plans.ts`
+  - `lib/billing-client.ts`
+  - `app/api/billing/checkout/route.ts`
+  - `app/api/billing/portal/route.ts`
+  - `app/api/billing/access/route.ts`
+  - `app/api/billing/sync/route.ts`
+  - `app/api/payments/webhooks/stripe/route.ts`
+  - `app/api/payments/webhooks/polar/route.ts`
 - Data model and storage
   - `lib/db/index.ts`
   - `lib/db/schema/index.ts`
   - `lib/db/schema/auth.ts`
   - `lib/db/schema/dashboard.ts`
+  - `lib/db/schema/billing.ts`
 - Shared runtime utilities
   - `lib/error-utils.ts`
   - `lib/logger.ts`
@@ -153,6 +183,7 @@ flowchart TD
 - `docs/architecture/auth-and-security.md`
 - `docs/architecture/data-model-and-storage.md`
 - `docs/architecture/frontend-and-ux-flows.md`
+- `docs/architecture/payments-and-billing.md`
 
 ## Update Protocol
 

@@ -111,6 +111,16 @@ const eslintConfig = [
     },
   },
 
+  // ── overrides: Bun test files ──
+  {
+    files: ["**/*.test.ts"],
+    rules: {
+      "@typescript-eslint/no-unsafe-call": "off",
+      "@typescript-eslint/no-unsafe-member-access": "off",
+      "@typescript-eslint/no-floating-promises": "off",
+    },
+  },
+
   // ── overrides: standalone config files (not in tsconfig program) ──
   {
     files: [

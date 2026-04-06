@@ -14,6 +14,13 @@ Update this file to keep note of how to maintain this repo!
 - Keep `/` aligned with Better Auth active organization state so signed-in users resume in their latest visited workspace instead of falling back to the public landing page.
 </Auth>
 
+<Payments>
+- Select provider with `PAYMENT_PROVIDER=stripe|polar`; canonical plans and env-mapped price/product IDs live in `lib/payments/plans.ts`.
+- Billing domain logic stays in `lib/payments/*`; routes under `app/api/billing/*` and `app/api/payments/webhooks/*` are thin adapters. Use `lib/billing-client.ts` from the browser for checkout/portal/access/sync.
+- Webhooks must use the raw request body for signature verification; store each provider event idempotently in `billing_event` before syncing (`lib/payments/repository.ts`).
+- After changing `lib/db/schema/billing.ts`, run `bun run db:generate` and apply migrations; document new env vars in `.env.example`.
+</Payments>
+
 <Logging>
 - Use `@/lib/logger` instead of raw `console.*` in app code so logs stay structured and level-aware.
 - Create scoped loggers with `logger.child({ scope: "feature.area" })` near the entry point you are working in.
