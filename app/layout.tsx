@@ -6,6 +6,7 @@ import "./globals.css";
 import { CookieConsentBanner } from "@/components/analytics/cookie-consent-banner";
 import { PostHogIdentify } from "@/components/analytics/posthog-identify";
 import { ThemeProvider } from "@/components/theme-provider";
+import { Toaster } from "@/components/ui/sonner";
 import { TRPCReactProvider } from "@/trpc/client";
 
 const displayFont = Fraunces({
@@ -40,6 +41,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
             <PostHogIdentify />
             {children}
             <CookieConsentBanner />
+            <Toaster />
           </TRPCReactProvider>
         </ThemeProvider>
       </body>
