@@ -29,6 +29,7 @@ Genesis is a multi-tenant SaaS template built on Next.js App Router. It provides
 - Authentication is handled through Better Auth and server-side session reads, not custom cookie parsing.
 - The tenant boundary is `organizationId`; cross-org access is not allowed.
 - URL organization slugs are the user-visible workspace selector, while Better Auth active organization state is kept in sync.
+- Auth enforcement uses three layers: `proxy.ts` for fast unauthenticated redirects, server route reads for session/org validation, and tRPC middleware for data access permission checks.
 - Auth emails are sent through Resend and must not block the primary auth request lifecycle.
 - Logging should use `@/lib/logger` with structured metadata instead of ad hoc `console.*` usage.
 - Database access flows through the shared Drizzle setup in `lib/db`.
@@ -76,7 +77,11 @@ flowchart TD
 - Frontend and UX
   - `app/layout.tsx`
   - `app/page.tsx`
+  - `app/not-found.tsx`
   - `app/reset-password/page.tsx`
+  - `app/o/[orgSlug]/loading.tsx`
+  - `app/o/[orgSlug]/error.tsx`
+  - `app/o/[orgSlug]/not-found.tsx`
   - `components/site-header.tsx`
   - `components/auth-modal.tsx`
   - `components/organization/organization-shell-hero.tsx`
@@ -84,6 +89,7 @@ flowchart TD
   - `components/theme-provider.tsx`
   - `components/ui/*`
 - Authentication and security
+  - `proxy.ts`
   - `lib/auth.ts`
   - `lib/auth-session.ts`
   - `lib/auth/permissions.ts`

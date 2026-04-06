@@ -1,4 +1,4 @@
-import { redirect } from "next/navigation";
+import { notFound } from "next/navigation";
 
 import { OrganizationSettings } from "@/components/organization-settings";
 import { SiteHeader } from "@/components/site-header";
@@ -17,7 +17,7 @@ export default async function OrganizationSettingsPage({
   const data = await getOrganizationPageData(orgSlug);
 
   if (!data) {
-    redirect("/");
+    notFound();
   }
 
   return (
