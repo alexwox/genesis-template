@@ -25,9 +25,22 @@ A multi-tenant SaaS template with authentication, organizations, and a typed API
 - Dark/light theme with `next-themes`
 - Structured logger with levels and child scopes
 - Result-style error handling (`tryCatch`) and user-safe error formatting
-- Resend webhook verification
-- R2/S3 presigned upload/download URL helpers
-- Architecture docs with update protocol
+- Resend (transactional email) and signed Resend webhooks
+- R2/S3-compatible presigned upload/download URL helpers
+- Billing: Stripe or Polar via `PAYMENT_PROVIDER`, local Postgres billing mirror, webhooks, checkout/portal/access routes (`lib/payments/*`)
+- Product analytics: PostHog (EU-oriented defaults, `/ph` rewrite, cookie consent for anonymous visitors, server events for key auth milestones)
+- Architecture documentation (see below) with an explicit update protocol when behavior changes
+
+## Documentation
+
+- **[`architecture.md`](./architecture.md)** — System overview, route map, cross-cutting invariants, topology diagram, source map by concern, key flows, and links to deeper docs.
+- **`docs/architecture/`** — Subsystem detail:
+  - [`auth-and-security.md`](./docs/architecture/auth-and-security.md)
+  - [`data-model-and-storage.md`](./docs/architecture/data-model-and-storage.md)
+  - [`frontend-and-ux-flows.md`](./docs/architecture/frontend-and-ux-flows.md)
+  - [`payments-and-billing.md`](./docs/architecture/payments-and-billing.md)
+
+When you change auth boundaries, billing, data model, or major UX flows, update `architecture.md` and the relevant file under `docs/architecture/` (see the “Update Protocol” section in `architecture.md`).
 
 ## Getting Started
 
@@ -83,7 +96,10 @@ lib/                    # Shared utilities and services
   try-catch.ts          # Result-style async helper
 trpc/                   # tRPC client wiring and React Query provider
 drizzle/                # Generated SQL migrations
+architecture.md         # Top-level architecture index (start here)
 docs/architecture/      # Subsystem documentation
+instrumentation-client.ts  # PostHog browser init (client instrumentation)
+proxy.ts                # Next.js 16 request proxy (auth gate for /o/*)
 ```
 
 ## Environment Variables
