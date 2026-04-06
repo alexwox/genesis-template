@@ -1,6 +1,8 @@
 import { headers } from "next/headers";
 
 import { auth } from "@/lib/auth";
+import { getOrganizationPermissionState } from "@/lib/auth/permissions";
+import { getFullOrganization, getSession } from "@/lib/auth-session";
 import { logger } from "@/lib/logger";
 import { tryCatch } from "@/lib/try-catch";
 
@@ -10,20 +12,14 @@ const organizationServerLogger = logger.child({
 
 export async function getHomeRedirectPath() {
   const requestHeaders = await headers();
-  const authSession = await auth.api.getSession({
-    headers: requestHeaders,
-  });
+  const authSession = await getSession();
 
   if (!authSession) {
     return null;
   }
 
   if (authSession.session.activeOrganizationId) {
-    const { data: activeOrganization, error } = await tryCatch(
-      auth.api.getFullOrganization({
-        headers: requestHeaders,
-      }),
-    );
+    const { data: activeOrganization, error } = await tryCatch(getFullOrganization());
 
     if (activeOrganization) {
       return `/o/${activeOrganization.slug}`;
@@ -58,92 +54,22 @@ export async function getHomeRedirectPath() {
   return `/o/${fallbackOrganization.slug}`;
 }
 
-async function getPermissionState(headersList: Headers, organizationId: string) {
-  const [
-    canCreateDashboard,
-    canInviteMembers,
-    canManageDashboardShares,
-    canManageMembers,
-    canUpdateOrganization,
-  ] = await Promise.all([
-    auth.api.hasPermission({
-      headers: headersList,
-      body: {
-        organizationId,
-        permissions: {
-          dashboard: ["create"],
-        },
-      },
-    }),
-    auth.api.hasPermission({
-      headers: headersList,
-      body: {
-        organizationId,
-        permissions: {
-          invitation: ["create"],
-        },
-      },
-    }),
-    auth.api.hasPermission({
-      headers: headersList,
-      body: {
-        organizationId,
-        permissions: {
-          dashboardShare: ["create"],
-        },
-      },
-    }),
-    auth.api.hasPermission({
-      headers: headersList,
-      body: {
-        organizationId,
-        permissions: {
-          member: ["update"],
-        },
-      },
-    }),
-    auth.api.hasPermission({
-      headers: headersList,
-      body: {
-        organizationId,
-        permissions: {
-          organization: ["update"],
-        },
-      },
-    }),
-  ]);
-
-  return {
-    canCreateDashboard: canCreateDashboard.success,
-    canInviteMembers: canInviteMembers.success,
-    canManageDashboardShares: canManageDashboardShares.success,
-    canManageMembers: canManageMembers.success,
-    canUpdateOrganization: canUpdateOrganization.success,
-  };
-}
-
 async function getOrganizationSessionAndFullOrganization(
   organizationSlug: string,
   options?: {
     membersLimit?: number;
   },
 ) {
-  const requestHeaders = await headers();
-  const authSession = await auth.api.getSession({
-    headers: requestHeaders,
-  });
+  const authSession = await getSession();
 
   if (!authSession) {
     return null;
   }
 
   const { data: organization, error } = await tryCatch(
-    auth.api.getFullOrganization({
-      headers: requestHeaders,
-      query: {
-        membersLimit: options?.membersLimit ?? 100,
-        organizationSlug,
-      },
+    getFullOrganization({
+      membersLimit: options?.membersLimit ?? 100,
+      organizationSlug,
     }),
   );
 
@@ -160,17 +86,32 @@ async function getOrganizationSessionAndFullOrganization(
     return null;
   }
 
+  const activeMember = organization.members.find((member) => {
+    return member.user.id === authSession.user.id;
+  });
+
+  if (!activeMember) {
+    organizationServerLogger.warn("Authenticated user is not part of organization member list.", {
+      organizationSlug,
+      userId: authSession.user.id,
+    });
+    return null;
+  }
+
   return {
+    activeMemberRole: activeMember.role,
     organization,
-    requestHeaders,
     session: authSession,
   };
 }
 
 export async function getOrganizationPageData(organizationSlug: string) {
-  const context = await getOrganizationSessionAndFullOrganization(organizationSlug, {
-    membersLimit: 100,
-  });
+  const context = await getOrganizationSessionAndFullOrganization(
+    organizationSlug,
+    {
+      membersLimit: 100,
+    },
+  );
 
   if (!context) {
     return null;
@@ -178,15 +119,18 @@ export async function getOrganizationPageData(organizationSlug: string) {
 
   return {
     organization: context.organization,
-    permissions: await getPermissionState(context.requestHeaders, context.organization.id),
+    permissions: getOrganizationPermissionState(context.activeMemberRole),
     session: context.session,
   };
 }
 
 export async function getOrganizationRouteData(organizationSlug: string) {
-  const context = await getOrganizationSessionAndFullOrganization(organizationSlug, {
-    membersLimit: 1,
-  });
+  const context = await getOrganizationSessionAndFullOrganization(
+    organizationSlug,
+    {
+      membersLimit: 1,
+    },
+  );
 
   if (!context) {
     return null;

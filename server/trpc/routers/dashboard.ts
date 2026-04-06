@@ -2,68 +2,10 @@ import { TRPCError } from "@trpc/server";
 import { and, eq } from "drizzle-orm";
 import { z } from "zod";
 
-import { auth } from "@/lib/auth";
-import type { statements } from "@/lib/auth/permissions";
 import { db } from "@/lib/db";
 import { dashboard, dashboardShare } from "@/lib/db/schema";
 import { slugify } from "@/lib/slug";
-import { createTRPCRouter, protectedProcedure } from "@/server/trpc/init";
-
-async function getOrganizationAccess(userId: string, organizationSlug: string) {
-  const scopedOrganization = await db.query.organization.findFirst({
-    where: (organizations, { eq }) => eq(organizations.slug, organizationSlug),
-  });
-
-  if (!scopedOrganization) {
-    throw new TRPCError({
-      code: "NOT_FOUND",
-      message: "Organization not found.",
-    });
-  }
-
-  const membership = await db.query.member.findFirst({
-    where: (members, { and, eq }) =>
-      and(
-        eq(members.organizationId, scopedOrganization.id),
-        eq(members.userId, userId),
-      ),
-  });
-
-  if (!membership) {
-    throw new TRPCError({
-      code: "FORBIDDEN",
-      message: "You are not a member of this organization.",
-    });
-  }
-
-  return {
-    membership,
-    organization: scopedOrganization,
-  };
-}
-
-async function ensurePermission(
-  headers: Headers,
-  organizationId: string,
-  permissions: {
-    [K in keyof typeof statements]?: Array<(typeof statements)[K][number]>;
-  },
-) {
-  const hasPermission = await auth.api.hasPermission({
-    headers,
-    body: {
-      organizationId,
-      permissions,
-    },
-  });
-
-  if (!hasPermission.success) {
-    throw new TRPCError({
-      code: "FORBIDDEN",
-      message: "You do not have permission to access this dashboard resource.",
-    });
-  }
-}
+import { createTRPCRouter, permissionedProcedure } from "@/server/trpc/init";
 
 async function createUniqueDashboardSlug(
   organizationId: string,
@@ -95,8 +37,25 @@ const scopedDashboardInput = z.object({
   organizationSlug: z.string().min(1),
 });
 
+function assertActiveOrganizationSlug(
+  activeOrganizationSlug: string,
+  requestedOrganizationSlug: string,
+) {
+  if (activeOrganizationSlug === requestedOrganizationSlug) {
+    return;
+  }
+
+  throw new TRPCError({
+    code: "FORBIDDEN",
+    message:
+      "The requested organization does not match your active workspace. Switch workspaces before trying again.",
+  });
+}
+
 export const dashboardRouter = createTRPCRouter({
-  create: protectedProcedure
+  create: permissionedProcedure({
+    dashboard: ["create"],
+  })
     .input(
       scopedDashboardInput.extend({
         description: z.string().trim().min(1).max(400).optional(),
@@ -104,27 +63,21 @@ export const dashboardRouter = createTRPCRouter({
       }),
     )
     .mutation(async ({ ctx, input }) => {
-      const access = await getOrganizationAccess(
-        ctx.user.id,
+      assertActiveOrganizationSlug(
+        ctx.activeOrganization.slug,
         input.organizationSlug,
       );
-
-      await ensurePermission(ctx.requestHeaders, access.organization.id, {
-        dashboard: ["create"],
-      });
+      const organizationId = ctx.activeOrganization.id;
 
       const createdDashboard = (
         await db
           .insert(dashboard)
           .values({
             id: crypto.randomUUID(),
-            organizationId: access.organization.id,
+            organizationId,
             createdByUserId: ctx.user.id,
             description: input.description,
-            slug: await createUniqueDashboardSlug(
-              access.organization.id,
-              input.title,
-            ),
+            slug: await createUniqueDashboardSlug(organizationId, input.title),
             title: input.title,
           })
           .returning()
@@ -132,21 +85,20 @@ export const dashboardRouter = createTRPCRouter({
 
       return createdDashboard;
     }),
-  list: protectedProcedure
+  list: permissionedProcedure({
+    dashboard: ["read"],
+  })
     .input(scopedDashboardInput)
     .query(async ({ ctx, input }) => {
-      const access = await getOrganizationAccess(
-        ctx.user.id,
+      assertActiveOrganizationSlug(
+        ctx.activeOrganization.slug,
         input.organizationSlug,
       );
-
-      await ensurePermission(ctx.requestHeaders, access.organization.id, {
-        dashboard: ["read"],
-      });
+      const organizationId = ctx.activeOrganization.id;
 
       const dashboards = await db.query.dashboard.findMany({
         where: (dashboards, { eq }) =>
-          eq(dashboards.organizationId, access.organization.id),
+          eq(dashboards.organizationId, organizationId),
         orderBy: (dashboards, { desc }) => [desc(dashboards.updatedAt)],
         with: {
           createdByUser: true,
@@ -167,7 +119,10 @@ export const dashboardRouter = createTRPCRouter({
         shareCount: currentDashboard.shares.length,
       }));
     }),
-  revokeShare: protectedProcedure
+  revokeShare: permissionedProcedure({
+    dashboard: ["share"],
+    dashboardShare: ["delete"],
+  })
     .input(
       scopedDashboardInput.extend({
         dashboardId: z.string().min(1),
@@ -175,15 +130,11 @@ export const dashboardRouter = createTRPCRouter({
       }),
     )
     .mutation(async ({ ctx, input }) => {
-      const access = await getOrganizationAccess(
-        ctx.user.id,
+      assertActiveOrganizationSlug(
+        ctx.activeOrganization.slug,
         input.organizationSlug,
       );
-
-      await ensurePermission(ctx.requestHeaders, access.organization.id, {
-        dashboard: ["share"],
-        dashboardShare: ["delete"],
-      });
+      const organizationId = ctx.activeOrganization.id;
 
       await db
         .delete(dashboardShare)
@@ -191,7 +142,7 @@ export const dashboardRouter = createTRPCRouter({
           and(
             eq(dashboardShare.dashboardId, input.dashboardId),
             eq(dashboardShare.memberId, input.memberId),
-            eq(dashboardShare.organizationId, access.organization.id),
+            eq(dashboardShare.organizationId, organizationId),
           ),
         );
 
@@ -199,7 +150,10 @@ export const dashboardRouter = createTRPCRouter({
         status: "ok" as const,
       };
     }),
-  share: protectedProcedure
+  share: permissionedProcedure({
+    dashboard: ["share"],
+    dashboardShare: ["create"],
+  })
     .input(
       scopedDashboardInput.extend({
         dashboardId: z.string().min(1),
@@ -208,21 +162,17 @@ export const dashboardRouter = createTRPCRouter({
       }),
     )
     .mutation(async ({ ctx, input }) => {
-      const access = await getOrganizationAccess(
-        ctx.user.id,
+      assertActiveOrganizationSlug(
+        ctx.activeOrganization.slug,
         input.organizationSlug,
       );
-
-      await ensurePermission(ctx.requestHeaders, access.organization.id, {
-        dashboard: ["share"],
-        dashboardShare: ["create"],
-      });
+      const organizationId = ctx.activeOrganization.id;
 
       const existingDashboard = await db.query.dashboard.findFirst({
         where: (dashboards, { and, eq }) =>
           and(
             eq(dashboards.id, input.dashboardId),
-            eq(dashboards.organizationId, access.organization.id),
+            eq(dashboards.organizationId, organizationId),
           ),
       });
 
@@ -237,7 +187,7 @@ export const dashboardRouter = createTRPCRouter({
         where: (members, { and, eq }) =>
           and(
             eq(members.id, input.memberId),
-            eq(members.organizationId, access.organization.id),
+            eq(members.organizationId, organizationId),
           ),
       });
 
@@ -256,7 +206,7 @@ export const dashboardRouter = createTRPCRouter({
             createdByUserId: ctx.user.id,
             dashboardId: existingDashboard.id,
             memberId: targetMember.id,
-            organizationId: access.organization.id,
+            organizationId,
             permission: input.permission,
           })
           .onConflictDoUpdate({

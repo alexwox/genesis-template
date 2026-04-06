@@ -25,18 +25,21 @@ function getRequiredEnv(name: "BETTER_AUTH_SECRET") {
   }
 
   throw new Error(
-    `${name} is required. Generate one with \`openssl rand -base64 32\` and add it to your environment.`
+    `${name} is required. Generate one with \`openssl rand -base64 32\` and add it to your environment.`,
   );
 }
 
 function trackAuthEmailTask(
   task: "organization-invitation" | "password-reset" | "verification",
-  promise: Promise<void>
+  promise: Promise<void>,
 ) {
   return promise.catch((caughtError: unknown) => {
     authLogger.error("Auth email delivery failed", {
       task,
-      error: caughtError instanceof Error ? caughtError : new Error("Unknown auth email error"),
+      error:
+        caughtError instanceof Error
+          ? caughtError
+          : new Error("Unknown auth email error"),
       rawError: caughtError instanceof Error ? undefined : caughtError,
     });
 
@@ -54,6 +57,12 @@ const betterAuthUrl =
 export const auth = betterAuth({
   baseURL: betterAuthUrl,
   secret: betterAuthSecret,
+  session: {
+    cookieCache: {
+      enabled: true,
+      maxAge: 5 * 60,
+    },
+  },
   advanced: {
     backgroundTasks: {
       handler: (promise) => {
@@ -70,7 +79,7 @@ export const auth = betterAuth({
     sendVerificationEmail: ({ user, url }) => {
       return trackAuthEmailTask(
         "verification",
-        deliverVerificationEmail(user.email, url)
+        deliverVerificationEmail(user.email, url),
       );
     },
   },
@@ -80,7 +89,7 @@ export const auth = betterAuth({
     sendResetPassword: ({ user, url }) => {
       return trackAuthEmailTask(
         "password-reset",
-        deliverResetPasswordEmail(user.email, url)
+        deliverResetPasswordEmail(user.email, url),
       );
     },
   },
@@ -99,7 +108,7 @@ export const auth = betterAuth({
             invitationId: data.id,
             organizationName: data.organization.name,
             role: Array.isArray(data.role) ? data.role.join(", ") : data.role,
-          })
+          }),
         );
       },
     }),

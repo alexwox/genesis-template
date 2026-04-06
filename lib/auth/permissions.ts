@@ -55,3 +55,62 @@ export const organizationRoles = {
 } as const;
 
 export type OrganizationRoleName = keyof typeof organizationRoles;
+
+export type PermissionInput = {
+  [K in keyof typeof statements]?: Array<(typeof statements)[K][number]>;
+};
+
+export function checkPermission(
+  role: string,
+  permissions: PermissionInput,
+): boolean {
+  const roleDefinition =
+    role in organizationRoles
+      ? organizationRoles[role as OrganizationRoleName]
+      : null;
+
+  if (!roleDefinition) {
+    return false;
+  }
+
+  return Object.entries(permissions).every(([resource, actions]) => {
+    const allowedActions = roleDefinition.statements[
+      resource as keyof typeof roleDefinition.statements
+    ];
+
+    return actions.every((action) =>
+      (allowedActions as readonly string[] | undefined)?.includes(action) ??
+      false,
+    );
+  });
+}
+
+export type OrganizationPermissionState = {
+  canCreateDashboard: boolean;
+  canInviteMembers: boolean;
+  canManageDashboardShares: boolean;
+  canManageMembers: boolean;
+  canUpdateOrganization: boolean;
+};
+
+export function getOrganizationPermissionState(
+  role: string,
+): OrganizationPermissionState {
+  return {
+    canCreateDashboard: checkPermission(role, {
+      dashboard: ["create"],
+    }),
+    canInviteMembers: checkPermission(role, {
+      invitation: ["create"],
+    }),
+    canManageDashboardShares: checkPermission(role, {
+      dashboardShare: ["create"],
+    }),
+    canManageMembers: checkPermission(role, {
+      member: ["update"],
+    }),
+    canUpdateOrganization: checkPermission(role, {
+      organization: ["update"],
+    }),
+  };
+}

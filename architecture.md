@@ -85,12 +85,14 @@ flowchart TD
   - `components/ui/*`
 - Authentication and security
   - `lib/auth.ts`
+  - `lib/auth-session.ts`
   - `lib/auth/permissions.ts`
   - `lib/auth-client.ts`
   - `lib/organization-server.ts`
   - `app/api/auth/[...all]/route.ts`
   - `app/accept-invitation/[invitationId]/page.tsx`
   - `server/trpc/context.ts`
+  - `server/trpc/init.ts`
 - API and RPC entry points
   - `app/api/trpc/[trpc]/route.ts`
   - `server/trpc/init.ts`
@@ -121,14 +123,14 @@ flowchart TD
 1. The browser opens auth UI from `components/auth-modal.tsx`.
 2. Client auth actions call Better Auth through `lib/auth-client.ts`.
 3. Better Auth is configured in `lib/auth.ts` and exposed via `app/api/auth/[...all]/route.ts`.
-4. Session-aware server code reads the authenticated user in `server/trpc/context.ts`.
+4. Session-aware server code resolves auth lazily through `server/trpc/init.ts` middleware using cached helpers in `lib/auth-session.ts`.
 5. Verification and password reset emails are generated through `lib/email/templates.ts` and delivered by `lib/email/resend.ts`.
 
 ### Organization Workspace Flow
 
 1. Signed-in users create or switch organizations from `components/organization-switcher.tsx`.
 2. Workspace routes under `/o/[orgSlug]` fetch org membership and org-scoped permissions through `lib/organization-server.ts`.
-3. `components/active-organization-sync.tsx` keeps Better Auth's active organization aligned with the current route slug.
+3. Workspace selection in `components/organization-switcher.tsx` updates Better Auth active organization state before route navigation.
 4. Dashboard CRUD and sharing are enforced through `server/trpc/routers/dashboard.ts`.
 5. Org settings flows call Better Auth organization APIs from `components/organization-settings.tsx`.
 

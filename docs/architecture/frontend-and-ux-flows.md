@@ -24,7 +24,6 @@ The frontend provides:
 - `components/organization-workspace.tsx`
 - `components/organization/organization-shell-hero.tsx`
 - `components/organization-settings.tsx`
-- `components/active-organization-sync.tsx`
 
 ## UX Flow Summary
 
@@ -32,7 +31,7 @@ The frontend provides:
 2. A signed-in user without an active org yet falls back to their first available org membership, which is then promoted into the active session state.
 3. Users create or switch workspaces from the header org switcher.
 4. Workspace routes load the organization identified by the URL slug.
-5. The active Better Auth organization is synced to the route for server and client permission checks.
+5. Workspace switches update Better Auth active organization state before navigation so route and session context stay aligned.
 6. The workspace page lets authorized members create dashboards and open a share dialog scoped to current org members.
 7. The settings page lets authorized admins update general settings, invite users, cancel or resend invitations, and update member roles.
 8. Invitation recipients finish onboarding through `/accept-invitation/[invitationId]`.
