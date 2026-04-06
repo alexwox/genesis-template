@@ -8,6 +8,7 @@ import { useRouter } from "next/navigation";
 import { SiteHeader } from "@/components/site-header";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { Button } from "@/components/ui/button";
+import { AnalyticsEvents, trackClientEvent } from "@/lib/analytics";
 import { authClient } from "@/lib/auth-client";
 import { getErrorMessage } from "@/lib/error-utils";
 import { tryCatch } from "@/lib/try-catch";
@@ -92,6 +93,10 @@ export default function AcceptInvitationPage({
       setIsPending(false);
       return;
     }
+
+    trackClientEvent(AnalyticsEvents.inviteAccepted, {
+      invitation_id: invitationId,
+    });
 
     setSuccess(true);
     setIsPending(false);

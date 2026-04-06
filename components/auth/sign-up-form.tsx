@@ -6,6 +6,7 @@ import type { AuthFormProps } from "@/components/auth/shared";
 import { AuthAlerts, getBaseUrl, SubmitButton } from "@/components/auth/shared";
 import { Field, FieldGroup, FieldLabel } from "@/components/ui/field";
 import { Input } from "@/components/ui/input";
+import { AnalyticsEvents, trackClientEvent } from "@/lib/analytics";
 import { authClient } from "@/lib/auth-client";
 import { getErrorMessage } from "@/lib/error-utils";
 import { tryCatch } from "@/lib/try-catch";
@@ -20,6 +21,8 @@ async function submitSignUp(
   setIsPending(true);
   onError(null);
   onMessage(null);
+
+  trackClientEvent(AnalyticsEvents.signupBegan);
 
   const { data: result, error } = await tryCatch(
     authClient.signUp.email({
@@ -41,6 +44,8 @@ async function submitSignUp(
     setIsPending(false);
     return;
   }
+
+  trackClientEvent(AnalyticsEvents.signupCompleted);
 
   onMessage("Check your inbox to verify your email.");
   onModeChange("sign-in");

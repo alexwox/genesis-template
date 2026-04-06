@@ -10,6 +10,8 @@ import {
   sendResetPasswordEmail as deliverResetPasswordEmail,
   sendVerificationEmail as deliverVerificationEmail,
 } from "@/lib/email/resend";
+import { captureServerEvent } from "@/lib/analytics/posthog-server";
+import { AnalyticsEvents } from "@/lib/analytics/event-names";
 import { ac, organizationRoles } from "@/lib/auth/permissions";
 import { logger } from "@/lib/logger";
 
@@ -81,6 +83,22 @@ export const auth = betterAuth({
         "verification",
         deliverVerificationEmail(user.email, url),
       );
+    },
+    afterEmailVerification: async (user) => {
+      try {
+        await captureServerEvent({
+          distinctId: user.id,
+          event: AnalyticsEvents.signupVerified,
+        });
+      } catch (caughtError: unknown) {
+        authLogger.warn("PostHog signup verified event failed.", {
+          userId: user.id,
+          error:
+            caughtError instanceof Error
+              ? caughtError
+              : new Error("Unknown posthog error"),
+        });
+      }
     },
   },
   emailAndPassword: {

@@ -19,6 +19,7 @@ import {
   FieldLabel,
 } from "@/components/ui/field";
 import { Input } from "@/components/ui/input";
+import { AnalyticsEvents, trackClientEvent } from "@/lib/analytics";
 import { authClient } from "@/lib/auth-client";
 import { getErrorMessage } from "@/lib/error-utils";
 import { slugify } from "@/lib/slug";
@@ -33,7 +34,11 @@ async function submitCreateOrganization(name: string) {
   const nextSlug = slugify(name);
 
   if (!nextSlug) {
-    return { error: "Add an organization name to generate a valid slug.", slug: null };
+    return {
+      error: "Add an organization name to generate a valid slug.",
+      slug: null,
+      organizationId: null,
+    };
   }
 
   const { data: result, error } = await tryCatch(
@@ -44,10 +49,17 @@ async function submitCreateOrganization(name: string) {
     }),
   );
 
-  if (error) return { error: getErrorMessage(error), slug: null };
-  if (result.error) return { error: getErrorMessage(result.error), slug: null };
+  if (error) return { error: getErrorMessage(error), slug: null, organizationId: null };
+  if (result.error) {
+    return { error: getErrorMessage(result.error), slug: null, organizationId: null };
+  }
 
-  return { error: null, slug: result.data.slug };
+  const data = result.data as { slug: string; id?: string };
+  return {
+    error: null,
+    slug: data.slug,
+    organizationId: data.id ?? null,
+  };
 }
 
 function CreateOrganizationForm({
@@ -127,6 +139,13 @@ export function OrganizationCreateDialog({
       setIsPending(false);
       return;
     }
+
+    trackClientEvent(AnalyticsEvents.orgCreated, {
+      organization_slug: result.slug,
+      ...(result.organizationId
+        ? { organization_id: result.organizationId }
+        : {}),
+    });
 
     onOpenChange(false);
     setIsPending(false);

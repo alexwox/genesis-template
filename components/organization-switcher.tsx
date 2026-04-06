@@ -22,20 +22,76 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import { AnalyticsEvents, trackClientEvent } from "@/lib/analytics";
 import { authClient } from "@/lib/auth-client";
+import { tryCatch } from "@/lib/try-catch";
+
+type OrganizationRow = { id: string; name: string; slug: string };
+
+async function switchActiveOrganization(args: {
+  activeOrganization: OrganizationRow | null;
+  organizationSlug: string;
+  router: ReturnType<typeof useRouter>;
+  safeOrganizations: OrganizationRow[];
+  setIsSwitching: (value: boolean) => void;
+}): Promise<void> {
+  const {
+    activeOrganization,
+    organizationSlug,
+    router,
+    safeOrganizations,
+    setIsSwitching,
+  } = args;
+
+  const target = safeOrganizations.find((o) => o.slug === organizationSlug);
+  if (!target || activeOrganization?.id === target.id) {
+    return;
+  }
+
+  const fromOrganizationId = activeOrganization?.id ?? null;
+
+  setIsSwitching(true);
+
+  const { data: result, error } = await tryCatch(
+    authClient.organization.setActive({
+      organizationSlug,
+    }),
+  );
+
+  if (error) {
+    setIsSwitching(false);
+    return;
+  }
+
+  if (result.error) {
+    setIsSwitching(false);
+    return;
+  }
+
+  trackClientEvent(AnalyticsEvents.orgSwitched, {
+    from_organization_id: fromOrganizationId,
+    to_organization_id: target.id,
+  });
+
+  setIsSwitching(false);
+  router.push(`/o/${organizationSlug}`);
+  router.refresh();
+}
 
 function SwitcherDropdown({
   activeOrganization,
   isSwitching,
   onCreateNew,
+  onOpenOrganizationSettings,
   onSwitch,
   organizations,
 }: {
-  activeOrganization: { id: string; name: string; slug: string } | null;
+  activeOrganization: OrganizationRow | null;
   isSwitching: boolean;
   onCreateNew: () => void;
+  onOpenOrganizationSettings: () => void;
   onSwitch: (slug: string) => void;
-  organizations: { id: string; name: string; slug: string }[];
+  organizations: OrganizationRow[];
 }) {
   const activeLabel = activeOrganization?.name ?? organizations[0]?.name ?? "Workspace";
 
@@ -84,7 +140,7 @@ function SwitcherDropdown({
           </DropdownMenuItem>
           {activeOrganization ? (
             <DropdownMenuItem
-              onClick={() => onSwitch(`${activeOrganization.slug}/settings`)}
+              onClick={() => onOpenOrganizationSettings()}
               disabled={isSwitching}
             >
               <Settings2 />
@@ -107,18 +163,6 @@ export function OrganizationSwitcher() {
   const [isSwitching, setIsSwitching] = useState(false);
 
   const safeOrganizations = useMemo(() => organizations ?? [], [organizations]);
-
-  async function handleSwitchOrganization(organizationSlug: string) {
-    setIsSwitching(true);
-
-    await authClient.organization.setActive({
-      organizationSlug,
-    });
-
-    setIsSwitching(false);
-    router.push(`/o/${organizationSlug}`);
-    router.refresh();
-  }
 
   if (isActiveOrgPending || isOrganizationsPending) {
     return (
@@ -155,8 +199,19 @@ export function OrganizationSwitcher() {
         activeOrganization={activeOrganization ?? null}
         isSwitching={isSwitching}
         onCreateNew={() => setCreateDialogOpen(true)}
+        onOpenOrganizationSettings={() => {
+          if (activeOrganization) {
+            router.push(`/o/${activeOrganization.slug}/settings`);
+          }
+        }}
         onSwitch={(slug) => {
-          void handleSwitchOrganization(slug);
+          void switchActiveOrganization({
+            activeOrganization: activeOrganization ?? null,
+            organizationSlug: slug,
+            router,
+            safeOrganizations,
+            setIsSwitching,
+          });
         }}
         organizations={safeOrganizations}
       />

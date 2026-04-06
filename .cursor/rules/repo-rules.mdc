@@ -38,8 +38,9 @@ Update this file to keep note of how to maintain this repo!
 
 <Analytics>
 - PostHog is the product analytics layer: client init lives in root `instrumentation-client.ts` (reverse-proxied via `next.config.ts` `/ph/*` → EU Cloud). Do not log secrets, tokens, or PII in event properties.
-- Server-side capture uses `posthog-node` from `@/lib/analytics` (`createPostHogServerClient`, `captureServerEvent`) with `POSTHOG_HOST` (default `https://eu.i.posthog.com`) — never point the Node client at the `/ph` rewrite.
+- Server-side capture uses `posthog-node` from `@/lib/analytics/posthog-server` (`createPostHogServerClient`, `captureServerEvent`) with `POSTHOG_HOST` (default `https://eu.i.posthog.com`) — never point the Node client at the `/ph` rewrite. Client components import `@/lib/analytics` only for `trackClientEvent` / `AnalyticsEvents` (no server re-exports in the barrel).
 - Identity and organization groups are handled by `components/analytics/posthog-identify.tsx` (Better Auth session → `identify` + `group`). Logged-in users are opted in to capturing; anonymous visitors see `CookieConsentBanner` and must accept before tracking.
 - On sign-out, call `posthog.reset()` after `authClient.signOut()` (see `components/site-header.tsx`) so the PostHog person session clears with the auth session.
 - Env: `NEXT_PUBLIC_POSTHOG_KEY`, `NEXT_PUBLIC_POSTHOG_HOST` (usually `/ph`), optional `POSTHOG_HOST` for server ingest.
+- Default template events (names in `lib/analytics/event-names.ts`): `signup:began`, `signup:completed`, `signup:verified` (server), `auth:signed_in`, `auth:signed_out`, `org:created`, `org:switched`, `invite:accepted`. Keep properties minimal and never include PII (email, name, tokens).
 </Analytics>

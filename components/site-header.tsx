@@ -23,6 +23,7 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import { AnalyticsEvents, trackClientEvent } from "@/lib/analytics";
 import { authClient } from "@/lib/auth-client";
 import { tryCatch } from "@/lib/try-catch";
 import posthog from "posthog-js";
@@ -60,6 +61,7 @@ function UserMenu({
       setIsSigningOut(false);
       return;
     }
+    trackClientEvent(AnalyticsEvents.authSignedOut);
     if (process.env.NEXT_PUBLIC_POSTHOG_KEY) {
       posthog.reset();
     }

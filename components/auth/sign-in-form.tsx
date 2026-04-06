@@ -6,6 +6,7 @@ import type { AuthFormProps, AuthMode } from "@/components/auth/shared";
 import { AuthAlerts, getBaseUrl, SubmitButton } from "@/components/auth/shared";
 import { Field, FieldGroup, FieldLabel } from "@/components/ui/field";
 import { Input } from "@/components/ui/input";
+import { AnalyticsEvents, trackClientEvent } from "@/lib/analytics";
 import { authClient } from "@/lib/auth-client";
 import { getErrorMessage } from "@/lib/error-utils";
 import { tryCatch } from "@/lib/try-catch";
@@ -39,6 +40,8 @@ async function submitSignIn(
     setIsPending(false);
     return;
   }
+
+  trackClientEvent(AnalyticsEvents.authSignedIn);
 
   onMessage("Signed in.");
   onClose();
