@@ -108,7 +108,7 @@ export default function AcceptInvitationPage({
       <SiteHeader />
 
       <div className="mx-auto flex min-h-[calc(100vh-76px)] max-w-3xl items-center px-6 py-16">
-        <section className="w-full rounded-4xl border border-border/60 bg-background/95 p-8 shadow-sm">
+        <section className="surface-shell">
           <p className="text-xs uppercase tracking-[0.32em] text-muted-foreground">
             Organization invitation
           </p>
@@ -125,7 +125,6 @@ export default function AcceptInvitationPage({
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <Button
               type="button"
-              className="rounded-full"
               disabled={isPending || success}
               onClick={() => {
                 void handleAcceptInvitation();
@@ -140,7 +139,7 @@ export default function AcceptInvitationPage({
                 "Accept invitation"
               )}
             </Button>
-            <Button asChild type="button" variant="outline" className="rounded-full">
+            <Button asChild type="button" variant="outline">
               <Link href="/">Back to home</Link>
             </Button>
           </div>

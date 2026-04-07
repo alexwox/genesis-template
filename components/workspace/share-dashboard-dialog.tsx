@@ -78,11 +78,9 @@ function MemberPicker({
           <button
             key={member.id}
             type="button"
-            className={`flex items-center justify-between rounded-2xl border px-4 py-3 text-left transition-colors ${
-              isSelected
-                ? "border-primary bg-primary/5"
-                : "border-border/70 bg-muted/30 hover:bg-muted/50"
-            }`}
+            className={
+              isSelected ? "surface-selectable-selected" : "surface-selectable"
+            }
             onClick={() => onSelectMember(member.id)}
           >
             <div className="flex min-w-0 items-center gap-3">
@@ -163,14 +161,12 @@ function ShareDialogContent({
         <Button
           type="button"
           variant="outline"
-          className="rounded-full"
           onClick={onClose}
         >
           Cancel
         </Button>
         <Button
           type="button"
-          className="rounded-full"
           disabled={!selectedMemberId}
           onClick={onShare}
         >
@@ -243,7 +239,7 @@ export function ShareDashboardDialog({
         if (!open) onClose();
       }}
     >
-      <DialogContent className="border-border/60 bg-background/95 sm:max-w-[640px]">
+      <DialogContent className="surface-dialog sm:max-w-[640px]">
         <DialogHeader>
           <DialogTitle>Share dashboard</DialogTitle>
           <DialogDescription>

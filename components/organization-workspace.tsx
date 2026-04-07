@@ -93,7 +93,7 @@ export function OrganizationWorkspace({
         title={organization.name}
         description="Dashboards are scoped to this organization and only visible to members with matching permissions."
         aside={
-          <div className="rounded-full border border-border/70 bg-muted/40 px-4 py-2 text-sm text-muted-foreground">
+          <div className="surface-pill-muted">
             {organization.members.length} members
           </div>
         }

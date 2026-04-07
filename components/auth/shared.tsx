@@ -61,7 +61,7 @@ export function SubmitButton({
 }) {
   return (
     <Button
-      className="mt-6 w-full rounded-full"
+      className="mt-6 w-full"
       type="submit"
       disabled={isPending}
     >

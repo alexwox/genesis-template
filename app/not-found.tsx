@@ -6,10 +6,10 @@ import { Button } from "@/components/ui/button";
 export default function GlobalNotFoundPage() {
   return (
     <main className="min-h-screen">
-      <header className="sticky top-0 z-40 border-b border-border/60 bg-background/70 backdrop-blur-xl">
+      <header className="surface-header-sticky">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
           <div className="flex items-center gap-4">
-            <div className="flex size-11 items-center justify-center rounded-full border border-border/70 bg-muted/40 shadow-sm">
+            <div className="surface-icon-badge flex size-11 items-center justify-center shadow-sm">
               <ShieldCheck className="size-5" />
             </div>
             <p className="text-xs uppercase tracking-[0.32em] text-muted-foreground">
@@ -20,12 +20,12 @@ export default function GlobalNotFoundPage() {
       </header>
 
       <div className="mx-auto flex min-h-[calc(100vh-76px)] max-w-3xl items-center px-6 py-16">
-        <section className="w-full rounded-4xl border border-border/60 bg-background/95 p-8 shadow-sm">
+        <section className="surface-shell">
           <p className="text-xs uppercase tracking-[0.32em] text-muted-foreground">
             404
           </p>
           <div className="mt-4 flex items-start gap-3">
-            <div className="rounded-full border border-border/70 bg-muted/40 p-2 text-muted-foreground">
+            <div className="surface-icon-inline">
               <Compass className="size-5" />
             </div>
             <div>
@@ -37,7 +37,7 @@ export default function GlobalNotFoundPage() {
           </div>
 
           <div className="mt-8">
-            <Button asChild type="button" variant="outline" className="rounded-full">
+            <Button asChild type="button" variant="outline">
               <Link href="/">Back to home</Link>
             </Button>
           </div>

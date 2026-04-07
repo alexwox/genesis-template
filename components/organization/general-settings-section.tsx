@@ -122,7 +122,6 @@ export function GeneralSettingsSection({
         <div className="mt-6 flex justify-end">
           <Button
             type="submit"
-            className="rounded-full"
             disabled={!canUpdateOrganization || isPending}
           >
             {isPending ? (

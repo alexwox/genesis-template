@@ -76,16 +76,16 @@ export function CookieConsentBanner() {
       role="dialog"
       aria-label="Cookie consent"
     >
-      <div className="flex w-full max-w-lg flex-col gap-4 rounded-2xl border border-border/60 bg-background/95 p-5 shadow-lg backdrop-blur-xl sm:max-w-2xl sm:flex-row sm:items-center sm:justify-between sm:gap-6 sm:p-6 md:max-w-3xl lg:max-w-4xl lg:gap-8 xl:max-w-5xl">
-        <p className="min-w-0 flex-1 text-sm leading-relaxed text-muted-foreground sm:text-[0.9375rem] sm:leading-relaxed lg:max-w-prose xl:max-w-160">
+      <div className="surface-cookie">
+        <p className="min-w-0 flex-1 text-sm leading-relaxed text-muted-foreground sm:leading-relaxed lg:max-w-prose xl:max-w-160">
           We use cookies and similar technologies to understand how you use our site and to improve it. You can
           change your mind anytime by clearing site data for this origin.
         </p>
         <div className="flex shrink-0 flex-wrap gap-2 sm:flex-nowrap sm:justify-end">
-          <Button type="button" variant="outline" className="min-h-11 flex-1 rounded-full sm:min-h-10 sm:flex-initial" onClick={decline}>
+          <Button type="button" variant="outline" className="min-h-11 flex-1 sm:min-h-10 sm:flex-initial" onClick={decline}>
             Decline
           </Button>
-          <Button type="button" className="min-h-11 flex-1 rounded-full sm:min-h-10 sm:flex-initial" onClick={accept}>
+          <Button type="button" className="min-h-11 flex-1 sm:min-h-10 sm:flex-initial" onClick={accept}>
             Accept
           </Button>
         </div>

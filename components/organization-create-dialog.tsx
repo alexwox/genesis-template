@@ -103,7 +103,7 @@ function CreateOrganizationForm({
       ) : null}
 
       <div className="mt-6 flex items-center justify-end gap-3">
-        <Button type="submit" className="rounded-full" disabled={isPending}>
+        <Button type="submit" disabled={isPending}>
           {isPending ? (
             <>
               <LoaderCircle className="animate-spin" data-icon="inline-start" />
@@ -156,7 +156,7 @@ export function OrganizationCreateDialog({
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="border-border/60 bg-background/95 sm:max-w-[560px]">
+      <DialogContent className="surface-dialog sm:max-w-[560px]">
         <DialogHeader>
           <DialogTitle>Create workspace</DialogTitle>
           <DialogDescription>

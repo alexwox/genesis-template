@@ -98,7 +98,7 @@ function SwitcherDropdown({
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button type="button" variant="outline" className="rounded-full px-3">
+        <Button type="button" variant="outline" className="px-3">
           <Building2 data-icon="inline-start" />
           <span className="max-w-36 truncate">{activeLabel}</span>
           <ChevronsUpDown data-icon="inline-end" />
@@ -166,7 +166,7 @@ export function OrganizationSwitcher() {
 
   if (isActiveOrgPending || isOrganizationsPending) {
     return (
-      <Button variant="outline" className="rounded-full" disabled>
+      <Button variant="outline" disabled>
         <LoaderCircle className="animate-spin" data-icon="inline-start" />
         Loading workspace...
       </Button>
@@ -179,7 +179,6 @@ export function OrganizationSwitcher() {
         <Button
           type="button"
           variant="outline"
-          className="rounded-full"
           onClick={() => setCreateDialogOpen(true)}
         >
           <Plus data-icon="inline-start" />

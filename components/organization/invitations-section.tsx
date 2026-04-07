@@ -128,7 +128,7 @@ function PendingInvitationCard({
   }
 
   return (
-    <div className="flex flex-col gap-4 rounded-3xl border border-border/70 bg-muted/30 p-5 md:flex-row md:items-center md:justify-between">
+    <div className="surface-invite-panel">
       <div className="flex flex-col gap-1">
         <p className="font-medium">{invitation.email}</p>
         <p className="text-sm text-muted-foreground">
@@ -142,7 +142,6 @@ function PendingInvitationCard({
         <Button
           type="button"
           variant="outline"
-          className="rounded-full"
           disabled={!canInviteMembers || isActionPending}
           onClick={() => {
             void handleResend();
@@ -154,7 +153,6 @@ function PendingInvitationCard({
         <Button
           type="button"
           variant="outline"
-          className="rounded-full"
           disabled={!canInviteMembers || isActionPending}
           onClick={() => {
             void handleCancel();
@@ -222,7 +220,6 @@ function InviteForm({ canInviteMembers, form }: InviteFormProps) {
       <div className="mt-6 flex justify-end">
         <Button
           type="submit"
-          className="rounded-full"
           disabled={!canInviteMembers || form.isPending}
         >
           {form.isPending ? (

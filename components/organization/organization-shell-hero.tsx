@@ -14,7 +14,7 @@ export function OrganizationShellHero({
   title,
 }: OrganizationShellHeroProps) {
   return (
-    <section className="rounded-4xl border border-border/60 bg-background/90 p-8 shadow-sm">
+    <section className="surface-shell-muted">
       <div className="flex flex-col gap-2">
         <p className="text-xs uppercase tracking-[0.32em] text-muted-foreground">{kicker}</p>
         <div className="flex flex-col gap-3 md:flex-row md:items-end md:justify-between">

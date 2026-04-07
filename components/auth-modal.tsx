@@ -65,18 +65,18 @@ export function AuthModal({
 
   return (
     <Dialog open={open} onOpenChange={resetModalState}>
-      <DialogContent className="overflow-hidden border-border/60 bg-background/95 p-0 sm:max-w-[560px]">
+      <DialogContent className="surface-dialog overflow-hidden p-0 sm:max-w-[560px]">
         <div className="grid gap-0 md:grid-cols-[1.05fr_0.95fr]">
-          <div className="hidden bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,0.12),transparent_38%),linear-gradient(180deg,rgba(22,24,30,0.96),rgba(12,14,18,0.98))] p-8 text-white md:flex md:flex-col md:justify-between">
+          <div className="auth-modal-marketing hidden p-8 md:flex md:flex-col md:justify-between">
             <div className="flex flex-col gap-5">
-              <p className="text-xs uppercase tracking-[0.35em] text-white/55">
+              <p className="text-xs uppercase tracking-[0.35em] text-auth-marketing-fg-muted">
                 Genesis
               </p>
               <div className="flex flex-col gap-3">
-                <h2 className="text-3xl font-semibold leading-tight">
+                <h2 className="text-3xl font-semibold leading-tight text-auth-marketing-fg">
                   Simple access.
                 </h2>
-                <p className="text-sm leading-7 text-white/70">
+                <p className="text-sm leading-7 text-auth-marketing-fg-muted">
                   Sign in, create an account, or reset your password.
                 </p>
               </div>

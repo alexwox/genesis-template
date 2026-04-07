@@ -1,3 +1,9 @@
+/**
+ * Transactional HTML email templates. Colors and layout use inline `style` attributes
+ * because many clients ignore linked stylesheets and external CSS. These values are
+ * intentionally **not** wired to `app/globals.css` theme tokens; when refreshing
+ * brand colors, update this file alongside the web app for visual parity.
+ */
 type AuthEmailTemplateInput = {
   actionLabel: string;
   actionUrl: string;

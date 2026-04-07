@@ -130,7 +130,7 @@ function ResetPasswordForm({
       <div className="mt-6 flex flex-col gap-3">
         <Button
           type="submit"
-          className="w-full rounded-full"
+          className="w-full"
           disabled={!isTokenReady || isPending}
         >
           {isPending ? (
@@ -142,7 +142,7 @@ function ResetPasswordForm({
             "Update password"
           )}
         </Button>
-        <Button asChild variant="outline" className="rounded-full">
+        <Button asChild variant="outline">
           <Link href="/">Back to home</Link>
         </Button>
       </div>
@@ -188,7 +188,7 @@ function ResetPasswordPageContent() {
   return (
     <main className="min-h-screen">
       <div className="mx-auto flex min-h-screen w-full max-w-md items-center px-6 py-16">
-        <section className="w-full rounded-4xl border border-border/60 bg-background/95 p-8 shadow-sm">
+        <section className="surface-shell">
           <div className="flex flex-col gap-3">
             <p className="text-xs uppercase tracking-[0.32em] text-muted-foreground">
               Genesis
@@ -212,10 +212,10 @@ function ResetPasswordPageContent() {
 
           {successMessage ? (
             <div className="mt-6 flex flex-col gap-3">
-              <Button asChild className="rounded-full">
+              <Button asChild>
                 <Link href="/">Return to homepage</Link>
               </Button>
-              <Button asChild variant="outline" className="rounded-full">
+              <Button asChild variant="outline">
                 <Link href="/">Open sign in</Link>
               </Button>
             </div>

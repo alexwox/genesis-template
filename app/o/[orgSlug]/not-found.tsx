@@ -6,12 +6,12 @@ import { Button } from "@/components/ui/button";
 export default function OrganizationNotFound() {
   return (
     <div className="mx-auto flex min-h-[calc(100vh-76px)] max-w-3xl items-center px-6 py-16">
-      <section className="w-full rounded-4xl border border-border/60 bg-background/95 p-8 shadow-sm">
+      <section className="surface-shell">
         <p className="text-xs uppercase tracking-[0.32em] text-muted-foreground">
           Workspace
         </p>
         <div className="mt-4 flex items-start gap-3">
-          <div className="rounded-full border border-border/70 bg-muted/40 p-2 text-muted-foreground">
+          <div className="surface-icon-inline">
             <ShieldAlert className="size-5" />
           </div>
           <div>
@@ -25,7 +25,7 @@ export default function OrganizationNotFound() {
         </div>
 
         <div className="mt-8">
-          <Button asChild type="button" variant="outline" className="rounded-full">
+          <Button asChild type="button" variant="outline">
             <Link href="/">Back to home</Link>
           </Button>
         </div>

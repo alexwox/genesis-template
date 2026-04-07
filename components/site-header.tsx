@@ -72,7 +72,7 @@ function UserMenu({
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button type="button" variant="outline" className="h-11 rounded-full px-3">
+        <Button type="button" variant="outline" className="h-11 px-3">
           <Avatar className="mr-1" size="lg">
             <AvatarFallback>{initials}</AvatarFallback>
           </Avatar>
@@ -141,10 +141,10 @@ export function SiteHeader() {
 
   return (
     <>
-      <header className="sticky top-0 z-40 border-b border-border/60 bg-background/70 backdrop-blur-xl">
+      <header className="surface-header-sticky">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
           <div className="flex items-center gap-4">
-            <div className="flex size-11 items-center justify-center rounded-full border border-border/70 bg-muted/40 shadow-sm">
+            <div className="surface-icon-badge flex size-11 items-center justify-center shadow-sm">
               <ShieldCheck className="size-5" />
             </div>
             <p className="text-xs uppercase tracking-[0.32em] text-muted-foreground">
@@ -156,7 +156,7 @@ export function SiteHeader() {
             <ThemeToggle />
 
             {isPending ? (
-              <Button variant="outline" size="icon" className="rounded-full" disabled>
+              <Button variant="outline" size="icon" disabled>
                 <LoaderCircle className="animate-spin" data-icon="inline-start" />
               </Button>
             ) : session?.user ? (
@@ -172,7 +172,6 @@ export function SiteHeader() {
                 <Button
                   type="button"
                   variant="ghost"
-                  className="rounded-full"
                   onClick={() => {
                     setModalMode("sign-in");
                     setIsModalOpen(true);
@@ -182,7 +181,6 @@ export function SiteHeader() {
                 </Button>
                 <Button
                   type="button"
-                  className="rounded-full"
                   onClick={() => {
                     setModalMode("sign-up");
                     setIsModalOpen(true);

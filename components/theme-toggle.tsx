@@ -22,7 +22,6 @@ export function ThemeToggle() {
         type="button"
         variant="outline"
         size="icon"
-        className="rounded-full"
         aria-label="Toggle theme"
         disabled
       >
@@ -36,7 +35,6 @@ export function ThemeToggle() {
       type="button"
       variant="outline"
       size="icon"
-      className="rounded-full"
       onClick={() => setTheme(isDark ? "light" : "dark")}
       aria-label={isDark ? "Switch to light mode" : "Switch to dark mode"}
     >

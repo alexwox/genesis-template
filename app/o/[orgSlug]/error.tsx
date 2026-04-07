@@ -30,12 +30,12 @@ export default function OrganizationError({
 
   return (
     <div className="mx-auto flex min-h-[calc(100vh-76px)] max-w-3xl items-center">
-      <section className="w-full rounded-4xl border border-border/60 bg-background/95 p-8 shadow-sm">
+      <section className="surface-shell">
         <p className="text-xs uppercase tracking-[0.32em] text-muted-foreground">
           Workspace error
         </p>
         <div className="mt-4 flex items-start gap-3">
-          <div className="rounded-full border border-destructive/40 bg-destructive/10 p-2 text-destructive">
+          <div className="surface-error-icon">
             <ShieldAlert className="size-5" />
           </div>
           <div>
@@ -51,7 +51,6 @@ export default function OrganizationError({
         <div className="mt-8 flex flex-col gap-3 sm:flex-row">
           <Button
             type="button"
-            className="rounded-full"
             onClick={() => {
               reset();
             }}
@@ -59,7 +58,7 @@ export default function OrganizationError({
             <RefreshCw data-icon="inline-start" />
             Try again
           </Button>
-          <Button asChild type="button" variant="outline" className="rounded-full">
+          <Button asChild type="button" variant="outline">
             <Link href="/">Back to home</Link>
           </Button>
         </div>

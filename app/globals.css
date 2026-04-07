@@ -21,6 +21,18 @@
   --input: oklch(0.9 0.01 95);
   --ring: oklch(0.54 0.06 267);
   --radius: 0.625rem;
+  --overlay: oklch(0 0 0 / 0.5);
+  --auth-marketing-bg-start: oklch(0.22 0.02 260);
+  --auth-marketing-bg-end: oklch(0.14 0.015 260);
+  --auth-marketing-fg: oklch(0.95 0.006 95);
+  --auth-marketing-fg-muted: oklch(0.72 0.01 95);
+  --elevation-sm: 0 1px 2px 0 color-mix(in oklab, var(--foreground) 6%, transparent);
+  --elevation-md:
+    0 4px 6px -1px color-mix(in oklab, var(--foreground) 8%, transparent),
+    0 2px 4px -2px color-mix(in oklab, var(--foreground) 6%, transparent);
+  --elevation-lg:
+    0 10px 15px -3px color-mix(in oklab, var(--foreground) 10%, transparent),
+    0 4px 6px -4px color-mix(in oklab, var(--foreground) 8%, transparent);
 }
 
 .dark {
@@ -43,6 +55,18 @@
   --border: oklch(0.3 0.018 260);
   --input: oklch(0.3 0.018 260);
   --ring: oklch(0.76 0.07 82);
+  --overlay: oklch(0 0 0 / 0.6);
+  --auth-marketing-bg-start: oklch(0.24 0.018 260);
+  --auth-marketing-bg-end: oklch(0.16 0.015 260);
+  --auth-marketing-fg: oklch(0.96 0.004 95);
+  --auth-marketing-fg-muted: oklch(0.7 0.01 95);
+  --elevation-sm: 0 1px 2px 0 color-mix(in oklab, oklch(0 0 0) 18%, transparent);
+  --elevation-md:
+    0 4px 6px -1px color-mix(in oklab, oklch(0 0 0) 22%, transparent),
+    0 2px 4px -2px color-mix(in oklab, oklch(0 0 0) 16%, transparent);
+  --elevation-lg:
+    0 10px 15px -3px color-mix(in oklab, oklch(0 0 0) 28%, transparent),
+    0 4px 6px -4px color-mix(in oklab, oklch(0 0 0) 20%, transparent);
 }
 
 @theme inline {
@@ -67,10 +91,19 @@
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
+  --color-overlay: var(--overlay);
+  --color-auth-marketing-fg: var(--auth-marketing-fg);
+  --color-auth-marketing-fg-muted: var(--auth-marketing-fg-muted);
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --radius-4xl: calc(var(--radius) + 16px);
+  --shadow-sm: var(--elevation-sm);
+  --shadow-md: var(--elevation-md);
+  --shadow-lg: var(--elevation-lg);
 }
 
 @layer base {
@@ -96,5 +129,103 @@
   h3,
   h4 {
     font-family: var(--font-display), serif;
+  }
+}
+
+@layer components {
+  .auth-modal-marketing {
+    background-image:
+      radial-gradient(
+        circle at top left,
+        color-mix(in oklab, var(--auth-marketing-fg) 12%, transparent) 0,
+        transparent 38%
+      ),
+      linear-gradient(180deg, var(--auth-marketing-bg-start), var(--auth-marketing-bg-end));
+  }
+}
+
+@layer utilities {
+  .surface-dialog {
+    @apply border-border/60 bg-background/95;
+  }
+
+  .surface-shell {
+    @apply w-full rounded-4xl border border-border/60 bg-background/95 p-8 shadow-sm;
+  }
+
+  .surface-shell-muted {
+    @apply rounded-4xl border border-border/60 bg-background/90 p-8 shadow-sm;
+  }
+
+  .surface-header-sticky {
+    @apply sticky top-0 z-40 border-b border-border/60 bg-background/70 backdrop-blur-xl;
+  }
+
+  .surface-cookie {
+    @apply flex w-full max-w-lg flex-col gap-4 rounded-2xl border border-border/60 bg-background/95 p-5 shadow-lg backdrop-blur-xl sm:max-w-2xl sm:flex-row sm:items-center sm:justify-between sm:gap-6 sm:p-6 md:max-w-3xl lg:max-w-4xl lg:gap-8 xl:max-w-5xl;
+  }
+
+  .surface-icon-badge {
+    @apply rounded-full border border-border/70 bg-muted/40;
+  }
+
+  .surface-icon-badge-soft {
+    @apply rounded-full border border-border/70 bg-muted/50;
+  }
+
+  .surface-pill-muted {
+    @apply rounded-full border border-border/70 bg-muted/40 px-4 py-2 text-sm text-muted-foreground;
+  }
+
+  .surface-role-chip {
+    @apply rounded-full border border-border/70 px-3 py-1 text-xs uppercase tracking-[0.18em] text-muted-foreground;
+  }
+
+  .surface-muted-panel {
+    @apply rounded-3xl border border-border/70 bg-muted/30 p-5;
+  }
+
+  .surface-muted-panel-row {
+    @apply flex flex-col gap-3 rounded-2xl border border-border/70 bg-background/85 px-4 py-3 md:flex-row md:items-center md:justify-between;
+  }
+
+  .surface-invite-panel {
+    @apply flex flex-col gap-4 rounded-3xl border border-border/70 bg-muted/30 p-5 md:flex-row md:items-center md:justify-between;
+  }
+
+  .surface-selectable {
+    @apply flex items-center justify-between rounded-2xl border border-border/70 bg-muted/30 px-4 py-3 text-left transition-colors hover:bg-muted/50;
+  }
+
+  .surface-selectable-selected {
+    @apply flex items-center justify-between rounded-2xl border border-primary bg-primary/5 px-4 py-3 text-left transition-colors;
+  }
+
+  .surface-error-icon {
+    @apply flex items-center justify-center rounded-full border border-destructive/40 bg-destructive/10 p-2 text-destructive;
+  }
+
+  .surface-icon-inline {
+    @apply flex items-center justify-center rounded-full border border-border/70 bg-muted/40 p-2 text-muted-foreground;
+  }
+
+  .surface-table-footer {
+    @apply border-t bg-muted/50 font-medium [&>tr]:last:border-b-0;
+  }
+
+  .surface-table-row {
+    @apply border-b transition-colors hover:bg-muted/50 data-[state=selected]:bg-muted;
+  }
+
+  .surface-skeleton-bar {
+    @apply animate-pulse rounded bg-muted/60;
+  }
+
+  .surface-skeleton-line {
+    @apply animate-pulse rounded bg-muted/50;
+  }
+
+  .surface-skeleton-card {
+    @apply h-20 animate-pulse rounded-3xl border border-border/70 bg-muted/40;
   }
 }

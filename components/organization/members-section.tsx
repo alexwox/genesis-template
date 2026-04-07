@@ -57,7 +57,7 @@ function MemberCard({ canManageMembers, member, organizationId }: MemberCardProp
   }
 
   return (
-    <div className="rounded-3xl border border-border/70 bg-muted/30 p-5">
+    <div className="surface-muted-panel">
       <div className="flex flex-col gap-4">
         <div className="flex items-center gap-3">
           <Avatar size="lg">
@@ -69,7 +69,7 @@ function MemberCard({ canManageMembers, member, organizationId }: MemberCardProp
               {member.user.email}
             </p>
           </div>
-          <div className="rounded-full border border-border/70 px-3 py-1 text-xs uppercase tracking-[0.18em] text-muted-foreground">
+          <div className="surface-role-chip">
             {displayRole}
           </div>
         </div>

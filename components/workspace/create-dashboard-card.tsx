@@ -96,7 +96,7 @@ function CreateDashboardForm({
       ) : null}
 
       <div className="mt-6 flex justify-end">
-        <Button type="submit" className="rounded-full" disabled={isCreatePending}>
+        <Button type="submit" disabled={isCreatePending}>
           {isCreatePending ? (
             <>
               <LoaderCircle className="animate-spin" data-icon="inline-start" />
@@ -117,9 +117,9 @@ export function CreateDashboardCard({
   onDashboardCreated,
 }: CreateDashboardCardProps) {
   return (
-    <section className="rounded-4xl border border-border/60 bg-background/90 p-8 shadow-sm">
+    <section className="surface-shell-muted">
       <div className="flex items-center gap-3">
-        <div className="flex size-11 items-center justify-center rounded-full border border-border/70 bg-muted/50">
+        <div className="surface-icon-badge-soft flex size-11 items-center justify-center">
           <LayoutDashboard className="size-5" />
         </div>
         <div className="flex flex-col gap-1">

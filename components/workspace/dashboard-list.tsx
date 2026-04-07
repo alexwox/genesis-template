@@ -37,7 +37,7 @@ function DashboardShareRow({
   share,
 }: DashboardShareRowProps) {
   return (
-    <div className="flex flex-col gap-3 rounded-2xl border border-border/70 bg-background/85 px-4 py-3 md:flex-row md:items-center md:justify-between">
+    <div className="surface-muted-panel-row">
       <div className="flex min-w-0 items-center gap-3">
         <Avatar size="sm">
           <AvatarFallback>
@@ -59,7 +59,6 @@ function DashboardShareRow({
           type="button"
           variant="outline"
           size="sm"
-          className="rounded-full"
           onClick={() => {
             void onRevokeShare(dashboardId, share.member.id);
           }}
@@ -78,7 +77,7 @@ function DashboardCard({
   onShareDashboard,
 }: DashboardCardProps) {
   return (
-    <div className="rounded-3xl border border-border/70 bg-muted/30 p-5">
+    <div className="surface-muted-panel">
       <div className="flex flex-col gap-4">
         <div className="flex flex-col gap-3 md:flex-row md:items-start md:justify-between">
           <div className="flex flex-col gap-1">
@@ -97,7 +96,6 @@ function DashboardCard({
             <Button
               type="button"
               variant="outline"
-              className="rounded-full"
               onClick={() => onShareDashboard(dashboard)}
             >
               <Share2 data-icon="inline-start" />
@@ -150,9 +148,9 @@ export function DashboardList({
   onShareDashboard,
 }: DashboardListProps) {
   return (
-    <section className="rounded-4xl border border-border/60 bg-background/90 p-8 shadow-sm">
+    <section className="surface-shell-muted">
       <div className="flex items-center gap-3">
-        <div className="flex size-11 items-center justify-center rounded-full border border-border/70 bg-muted/50">
+        <div className="surface-icon-badge-soft flex size-11 items-center justify-center">
           <Users2 className="size-5" />
         </div>
         <div className="flex flex-col gap-1">
