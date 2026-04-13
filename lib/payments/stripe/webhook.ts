@@ -1,5 +1,10 @@
 import type Stripe from "stripe";
 
+import {
+  finalizeGuestCheckout,
+  finalizeGuestCheckoutByProviderCheckout,
+} from "@/lib/commerce/service";
+import { CommerceError } from "@/lib/commerce/errors";
 import { logger } from "@/lib/logger";
 import { tryInsertBillingEvent } from "@/lib/payments/repository";
 import { syncStripeCustomerSubscriptions } from "@/lib/payments/stripe/sync";
@@ -67,6 +72,56 @@ async function resolveReferenceForEvent(
   return referenceFromCustomer(customer);
 }
 
+async function maybeFinalizeGuestStripeCheckout(event: Stripe.Event): Promise<void> {
+  if (event.type !== "checkout.session.completed") {
+    return;
+  }
+
+  const session = event.data.object;
+  const checkoutId = session.metadata?.commerceCheckoutId;
+
+  try {
+    if (checkoutId && checkoutId.length > 0) {
+      await finalizeGuestCheckout({
+        provider: "stripe",
+        checkoutId,
+        providerCheckoutId: session.id,
+        providerOrderId:
+          typeof session.payment_intent === "string" ? session.payment_intent : null,
+        providerCustomerId:
+          typeof session.customer === "string" ? session.customer : null,
+        paidAt: new Date(),
+        metadata: {
+          stripeEventId: event.id,
+        },
+      });
+      return;
+    }
+
+    await finalizeGuestCheckoutByProviderCheckout({
+      provider: "stripe",
+      providerCheckoutId: session.id,
+      providerOrderId:
+        typeof session.payment_intent === "string" ? session.payment_intent : null,
+      providerCustomerId:
+        typeof session.customer === "string" ? session.customer : null,
+      paidAt: new Date(),
+      metadata: {
+        stripeEventId: event.id,
+      },
+    });
+  } catch (error) {
+    if (error instanceof CommerceError && error.code === "NOT_FOUND") {
+      log.warn("Stripe commerce checkout id was not found", {
+        eventId: event.id,
+        checkoutId,
+      });
+      return;
+    }
+    throw error;
+  }
+}
+
 export async function processStripeWebhookEvent(
   event: Stripe.Event,
 ): Promise<void> {
@@ -99,6 +154,8 @@ export async function processStripeWebhookEvent(
   if (!relevant.includes(event.type)) {
     return;
   }
+
+  await maybeFinalizeGuestStripeCheckout(event);
 
   const reference = await resolveReferenceForEvent(event, stripe);
   if (!reference) {

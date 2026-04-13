@@ -69,3 +69,21 @@ Provider-hosted portals (Stripe Customer Portal, Polar customer portal) remain t
 ## Related docs
 
 - Deeper product/payment abstraction notes: `.cursor/research/payment-provider-abstraction-architecture.md` (research; cross-check with this file for current code paths).
+- Guest checkout and commerce lifecycle: `docs/architecture/commerce-and-guest-checkout.md`.
+
+## Delta: 2026-04-13 - Billing vs commerce split
+
+- What changed:
+  - Added a parallel `lib/commerce/*` subsystem and public `app/api/commerce/*` routes for guest one-time checkout and claim-later linking.
+  - Stripe/Polar webhook handlers now also attempt guest-order finalization based on commerce checkout metadata before subscription synchronization.
+- Why:
+  - `BillingReference`-based flows are intentionally account-bound and do not map cleanly to anonymous storefront purchases.
+- Impact:
+  - `lib/payments/*` stays focused on subscriptions, portal, and billing read model for signed-in users/orgs.
+  - Guest commerce now has dedicated local checkout/order lifecycle tracking and fulfillment state.
+- Entry points:
+  - `app/api/commerce/checkout/route.ts`
+  - `app/api/commerce/claim/route.ts`
+  - `lib/commerce/service.ts`
+  - `lib/payments/stripe/webhook.ts`
+  - `lib/payments/polar/webhook.ts`

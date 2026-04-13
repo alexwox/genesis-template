@@ -13,6 +13,7 @@ Genesis is a multi-tenant SaaS template built on Next.js App Router. It provides
 - Org-scoped dashboard and sharing tables as a reference workspace feature
 - R2/S3-compatible object storage utilities for file uploads
 - Provider-agnostic billing (Stripe or Polar) with a local Postgres billing mirror and webhook-driven sync
+- Parallel guest-commerce checkout lifecycle for one-time purchases with claim-later account linking
 
 ## Routes
 
@@ -26,6 +27,7 @@ Genesis is a multi-tenant SaaS template built on Next.js App Router. It provides
 - `/api/webhooks/resend` receives signed Resend webhook events
 - `/api/billing/checkout`, `/api/billing/portal`, `/api/billing/access`, `/api/billing/sync` are authenticated billing helpers (delegate to `lib/payments/*`)
 - `/api/payments/webhooks/stripe` and `/api/payments/webhooks/polar` receive provider billing webhooks (raw body + signature verification)
+- `/api/commerce/checkout` and `/api/commerce/claim` handle guest one-time checkout and post-purchase claim linking
 - `/sitemap.xml` and `/robots.txt` are generated from `app/sitemap.ts` and `app/robots.ts` (canonical host from `getSiteUrl()` in `lib/site-url.ts`)
 - `/llms.txt` (optional curated site summary for some LLM crawlers) is served from `app/llms.txt/route.ts`
 
@@ -41,6 +43,7 @@ Genesis is a multi-tenant SaaS template built on Next.js App Router. It provides
 - External service clients should keep their protocol logic inside reusable `lib/<integration>/` modules, with Next.js and tRPC concerns kept in thin adapters.
 - UI code should stay thin, with state and data flow owned intentionally near each entry point.
 - Billing entitlements and plan limits for feature gating should read from the local billing read model (`lib/payments/read-model.ts`), not from provider SDK objects in the browser.
+- Guest-commerce checkout/order state should live in local commerce tables and be finalized from webhooks, not browser redirect callbacks.
 - **Public vs private indexing**: Marketing and other **public** pages inherit indexable defaults from `app/layout.tsx` (`metadataBase`, Open Graph). **Authenticated workspace** routes under `/o/[orgSlug]` set `robots` to `noindex, nofollow` in `app/o/[orgSlug]/layout.tsx`. Extend `app/sitemap.ts` only with URLs that should be discovered in search; keep app and API routes out unless product requirements say otherwise. Details: `docs/architecture/seo-and-geo.md`.
 
 ## Current Topology
@@ -145,6 +148,13 @@ flowchart TD
   - `app/api/billing/sync/route.ts`
   - `app/api/payments/webhooks/stripe/route.ts`
   - `app/api/payments/webhooks/polar/route.ts`
+- Commerce and guest checkout
+  - `lib/commerce/service.ts`
+  - `lib/commerce/provider-checkout.ts`
+  - `lib/commerce/repository.ts`
+  - `lib/commerce/catalog.ts`
+  - `app/api/commerce/checkout/route.ts`
+  - `app/api/commerce/claim/route.ts`
 - Data model and storage
   - `lib/db/index.ts`
   - `lib/db/schema/index.ts`
@@ -192,6 +202,7 @@ flowchart TD
 - `docs/architecture/data-model-and-storage.md`
 - `docs/architecture/frontend-and-ux-flows.md`
 - `docs/architecture/payments-and-billing.md`
+- `docs/architecture/commerce-and-guest-checkout.md`
 - `docs/architecture/seo-and-geo.md`
 
 ## Update Protocol
